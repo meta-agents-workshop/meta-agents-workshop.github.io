@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>NeurIPS 2026 Workshop on Meta-Agents: Building, Optimizing, and Improving Agentic Systems</title>
+  <meta content="A NeurIPS 2026 workshop on meta-agents: agents that design, optimize, supervise, and improve other agents." name="description">
+  <meta content="meta-agents, agentic AI, automated agent design, self-improvement, compound AI systems, meta-learning, NeurIPS 2026" name="keywords">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+    .schedule-table th,
+    .schedule-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    .schedule-table th {
+      background-color: #f7f7f7;
+      font-weight: bold;
+    }
+    .schedule-table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .schedule-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+    @media (max-width: 768px) {
+      .schedule-table th,
+      .schedule-table td {
+        padding: 10px;
+      }
+    }
+    #organizers .speaker img,
+    #speakers .speaker img,
+    #panelists .speaker img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+    #sponsors .speaker img {
+      width: 300px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="header" class="d-flex align-items-center">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto">
+        <a href="index.html" class="scrollto" style="font-weight: 800; font-size: 1.25em; color: #00356B; text-decoration: none;">Meta-Agents</a>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#topic">Topics</a></li>
+          <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
+          <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
+          <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
+          <li><a class="nav-link scrollto" href="#organizers">Organizers</a></li>
+          <li><a class="nav-link scrollto" href="mailto:meta-agents-workshop@googlegroups.com">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <div id="proposal-banner" style="background: #fff3cd; color: #5b4a00; text-align: center; padding: 10px 15px; font-size: 1em; border-bottom: 1px solid #f0d97b;">
+    <strong>⚠ Proposal Stage:</strong> This site describes a workshop proposal submitted to <a href="https://neurips.cc/" target="_blank" rel="noopener noreferrer" style="color: #5b4a00; text-decoration: underline;">NeurIPS 2026</a>. Speakers, dates, and program details are tentative and will be confirmed after workshop acceptance.
+  </div>
+
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="200">
+      <div style="display: inline-block; background: rgba(255, 193, 7, 0.95); color: #3d2f00; font-size: 1em; font-weight: 700; padding: 6px 20px; border-radius: 4px; margin-bottom: 22px; letter-spacing: 0.08em; text-transform: uppercase;">
+        Proposal
+      </div>
+      <h1 class="mb-4 pb-0" style="text-transform: none;">
+        NeurIPS 2026 Workshop on <br>
+        Meta-Agents: Building, Optimizing, and Improving Agentic Systems<br>
+      </h1>
+      <h2 class="mb-4 pb-0" style="text-transform: none; color: white;">
+        December 11-12, 2026<br>
+        Sydney, Australia
+      </h2>
+
+      <div class="social-links" style="margin-top: 25px;">
+        <div style="margin-bottom: 20px; color: white; font-size: 1.2em;">
+          Agents that design, optimize, supervise, and improve other agents.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <section id="about">
+      <div class="container position-relative" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>About The Workshop</h2>
+            <p style="font-size: 18px;">
+              For the past two years, progress on language agents has come from making a <b>single agent</b> do more: browse the web, write and run code, call tools, and stay on task for hours. The next frontier is the <b>meta level</b>, the agent that acts on <i>other</i> agents.
+            </p>
+            <p style="font-size: 18px;">
+              We call these higher-order agents <b>meta-agents</b>: agents that <b>design</b>, <b>optimize</b>, <b>supervise</b>, and <b>train</b> other agents. This is already happening, but it is split across communities that rarely talk:
+            </p>
+            <ul style="font-size: 18px;">
+              <li>Automated design of agent architectures and the harness that wraps them (ADAS, Meta Agent Search, automated harness design).</li>
+              <li>Agents that recursively improve their own code (the Darwin Gödel Machine, self-taught optimizers).</li>
+              <li>Optimizers that compile and tune multi-module language-model programs (DSPy, GEPA).</li>
+              <li>The meta-learning tradition that asks how systems learn to learn.</li>
+            </ul>
+            <p style="font-size: 18px;">
+              This workshop brings these threads under one roof and asks the question none of them has owned: how do we build and improve agents systematically, increasingly using agents to do it, and how do we keep a recursively self-improving system under control? It builds on the team's <a href="https://workshop-multi-turn-interaction.github.io/" target="_blank" rel="noopener noreferrer">1st Multi-Turn Interaction Workshop @ NeurIPS 2025</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="topic" class="section-with-bg">
+      <br>
+      <br>
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Topics</h2>
+          <p>We organize submissions around five themes. Topics include but are not limited to:</p>
+        </div>
+        <section id="topics">
+          <div class="container">
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
+                  <b style="font-size: 18px; color: #343a40;">(1) Automated Design and Discovery of Agentic Systems:</b>
+                  <p style="color: #6c757d; margin-top: 10px;">
+                    Most agent systems are still built by hand. We invite work on searching the space of agent architectures, tools, and scaffolds (Meta Agent Search, automated harness design); on telling when a discovered design generalizes past the tasks it was tuned on; and on the cost of running these searches at scale.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
+                  <b style="font-size: 18px; color: #343a40;">(2) Optimizing Compound AI Systems and Language-Model Programs:</b>
+                  <p style="color: #6c757d; margin-top: 10px;">
+                    Once an agent is more than one model call, the problem is optimizing the whole program. We seek work on optimizers for multi-module systems (DSPy, GEPA, Trace), credit assignment across modules, inference-time search, context optimization, and the theory of when any of this converges.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
+                  <b style="font-size: 18px; color: #343a40;">(3) Self-Improvement and Open-Ended Evolution:</b>
+                  <p style="color: #6c757d; margin-top: 10px;">
+                    A meta-agent can point at itself. We welcome work on agents that recursively rewrite their own code (the Darwin Gödel Machine, self-taught optimizers), AI-generating algorithms and open-endedness, self-play and co-evolution, and honest analyses of how self-improving agents drift or game their own reward.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
+                  <b style="font-size: 18px; color: #343a40;">(4) Meta-Learning and Meta-RL for Agents:</b>
+                  <p style="color: #6c757d; margin-top: 10px;">
+                    Learning how to learn predates language agents and gains new surface area here. We invite work connecting classical meta-learning and meta-RL to agent training: learned optimizers, learned reward and verification, tree-structured rollouts and finer-grained credit assignment, and curricula one agent proposes for another.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
+                  <b style="font-size: 18px; color: #343a40;">(5) Substrates, Evaluation, and Oversight for Meta-Agents:</b>
+                  <p style="color: #6c757d; margin-top: 10px;">
+                    Acting on another agent means watching, forking, and replaying its execution. We invite work on runtimes that treat agent execution as a first-class object, benchmarks for meta-level methods (not just agents doing tasks), and the oversight problem that self-improving and agent-designed systems create.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <br>
+      <br>
+    </section>
+
+    <section id="cfp">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Call For Papers</h2>
+        </div>
+        <p>
+          The <b>NeurIPS 2026 Workshop on Meta-Agents</b> invites submissions on architectures, algorithms, theory, empirical studies, benchmarks, and position papers about agents that design, optimize, supervise, train, or improve other agents. Submissions must present original, unpublished work that has not appeared at NeurIPS or other archival machine-learning venues.
+        </p>
+        <h3>Key Dates</h3>
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Submission Deadline</b>: <span style="color: red; font-weight: bold;">August 29, 2026, AoE</span> (tentative)</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Notification</b>: <span style="color: red; font-weight: bold;">on or before September 29, 2026, AoE</span></li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Workshop Date</b>: December 11-12, 2026 (Sydney)</li>
+        </ul>
+        All deadlines follow the <a href="https://time.is/Anywhere_on_Earth">Anywhere on Earth (AoE)</a> timezone. Final dates will be confirmed upon workshop acceptance and aligned with the NeurIPS 2026 timeline.
+        <br>
+        <br>
+        <h3>Submission Site</h3>
+        <p>
+          Submissions will be managed via OpenReview and remain private during review. All authors should maintain up-to-date OpenReview profiles for conflict-of-interest management and paper matching. The submission portal will be announced once the workshop is accepted.
+        </p>
+        <h3>Scope</h3>
+        We welcome contributions across the five themes above. Accepted papers are presented as posters, with a subset selected for oral or spotlight talks. The workshop is in person at NeurIPS 2026 in Sydney.
+        <br>
+        <br>
+        <h3>Submission Guidelines</h3>
+        <h5>Formatting</h5>
+        Submissions must be in English and use the NeurIPS 2026 workshop LaTeX template. Papers are submitted as a <b>single PDF</b>:
+        <ul class="fa-ul">
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Full Papers</b>: at most 8 pages (main text)</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Short Papers</b>: at most 4 pages (main text)</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Tiny Papers</b>: encouraged from students and under-resourced groups, welcoming simple ideas, modest results, follow-ups, or fresh perspectives.</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span>References and appendices do not count toward the page limit, but the main text must be self-contained.</li>
+        </ul>
+        <h5>Anonymity</h5>
+        The workshop uses <b>double-blind review</b>. Submissions must be anonymized, with author names, affiliations, and acknowledgments removed and prior work cited in the third person.
+        <br>
+        <br>
+        <h5>Non-Archival Policy</h5>
+        <p><b>The workshop is non-archival.</b> Papers under review elsewhere are welcome, and accepted papers may be published at other venues afterward. Work already published at NeurIPS or other archival ML venues should not be submitted.
+        </p>
+        <h5>Contact</h5>
+        Email <a href="mailto:meta-agents-workshop@googlegroups.com">meta-agents-workshop@googlegroups.com</a>.
+        <!-- TODO(organizers): create the contact group address, or swap in a real one. -->
+      </div>
+    </section>
+
+    <section id="speakers" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Speakers</h2>
+          <p>Invited speakers (all tentative; invitations in progress).</p>
+        </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Christopher+Manning&size=256&background=00356B&color=ffffff&bold=true&format=png" alt="Christopher D. Manning" class="img-fluid">
+              <br><a href="https://nlp.stanford.edu/~manning/" style="font-size: 1.2em; color: #00356B;">Christopher D. Manning</a></br>
+              <p>Stanford University</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Omar+Khattab&size=256&background=00356B&color=ffffff&bold=true&format=png" alt="Omar Khattab" class="img-fluid">
+              <br><a href="https://omarkhattab.com/" style="font-size: 1.2em; color: #00356B;">Omar Khattab</a></br>
+              <p>MIT</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Chelsea+Finn&size=256&background=00356B&color=ffffff&bold=true&format=png" alt="Chelsea Finn" class="img-fluid">
+              <br><a href="https://ai.stanford.edu/~cbfinn/" style="font-size: 1.2em; color: #00356B;">Chelsea Finn</a></br>
+              <p>Stanford University</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Azalia+Mirhoseini&size=256&background=00356B&color=ffffff&bold=true&format=png" alt="Azalia Mirhoseini" class="img-fluid">
+              <br><a href="https://www.azaliamirhoseini.com/" style="font-size: 1.2em; color: #00356B;">Azalia Mirhoseini</a></br>
+              <p>Stanford &amp; Google DeepMind</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
+              <img src="assets/img/speakers/graham_neubig.jpg" alt="Graham Neubig" class="img-fluid">
+              <br><a href="https://www.phontron.com/" style="font-size: 1.2em; color: #00356B;">Graham Neubig</a></br>
+              <p>Carnegie Mellon University</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="350" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Jeff+Clune&size=256&background=00356B&color=ffffff&bold=true&format=png" alt="Jeff Clune" class="img-fluid">
+              <br><a href="http://jeffclune.com/" style="font-size: 1.2em; color: #00356B;">Jeff Clune</a></br>
+              <p>UBC, Vector &amp; Google DeepMind</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="400" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Jenny+Zhang&size=256&background=00356B&color=ffffff&bold=true&format=png" alt="Jenny Zhang" class="img-fluid">
+              <br><a href="https://www.jennyzhangzt.com/" style="font-size: 1.2em; color: #00356B;">Jenny Zhang</a></br>
+              <p>Recursive Intelligence</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" style="padding-top: 20px;">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Tentative Schedule</h2>
+          <p>All invited talks include a Q&amp;A session. Titles are illustrative; the final schedule is confirmed closer to the workshop.</p>
+        </div>
+        <style>
+          .schedule-table td.time, .schedule-table th:first-child { white-space: nowrap; }
+          .schedule-table tr.break-row td { background-color: #fff3cd80 !important; }
+          .schedule-table tr.poster-row td { background-color: #d1ecf180 !important; }
+        </style>
+        <div class="table-responsive">
+          <table class="schedule-table table align-middle">
+            <thead>
+              <tr>
+                <th>Time&nbsp;(AEDT)</th>
+                <th>Session</th>
+                <th>Speaker</th>
+                <th>Talk&nbsp;Title</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time">09:00 – 09:10</td>
+                <td>Opening Remarks</td>
+                <td colspan="2">Organizers</td>
+              </tr>
+              <tr>
+                <td class="time">09:10 – 09:40</td>
+                <td>Keynote</td>
+                <td>Christopher D. Manning (Stanford)</td>
+                <td>The Science of Programming Language-Model Systems</td>
+              </tr>
+              <tr>
+                <td class="time">09:40 – 10:05</td>
+                <td>Invited Talk</td>
+                <td>Omar Khattab (MIT)</td>
+                <td>Compiling and Optimizing Compound AI Systems</td>
+              </tr>
+              <tr>
+                <td class="time">10:05 – 10:30</td>
+                <td>Invited Talk</td>
+                <td>Chelsea Finn (Stanford)</td>
+                <td>From Meta-Learning to Agents that Learn to Learn</td>
+              </tr>
+              <tr>
+                <td class="time">10:30 – 11:00</td>
+                <td>Oral + Spotlight Talks 1</td>
+                <td colspan="2">Selected authors</td>
+              </tr>
+              <tr class="poster-row">
+                <td class="time">11:00 – 11:45</td>
+                <td colspan="3">Poster Session 1 &amp; Coffee</td>
+              </tr>
+              <tr>
+                <td class="time">11:45 – 12:10</td>
+                <td>Invited Talk</td>
+                <td>Azalia Mirhoseini (Stanford &amp; GDM)</td>
+                <td>Self-Improving AI Across Model, Software, and Hardware</td>
+              </tr>
+              <tr class="break-row">
+                <td class="time">12:10 – 13:25</td>
+                <td colspan="3">Lunch Break</td>
+              </tr>
+              <tr>
+                <td class="time">13:25 – 13:50</td>
+                <td>Invited Talk</td>
+                <td>Graham Neubig (CMU)</td>
+                <td>Automating the Agent Harness</td>
+              </tr>
+              <tr>
+                <td class="time">13:50 – 14:15</td>
+                <td>Invited Talk</td>
+                <td>Jeff Clune (UBC &amp; GDM)</td>
+                <td>AI-Generating Algorithms and Open-Ended Self-Improvement</td>
+              </tr>
+              <tr>
+                <td class="time">14:15 – 14:40</td>
+                <td>Invited Talk</td>
+                <td>Jenny Zhang (Recursive)</td>
+                <td>The Darwin Gödel Machine and Self-Improving Agents</td>
+              </tr>
+              <tr>
+                <td class="time">14:40 – 15:10</td>
+                <td>Oral + Spotlight Talks 2</td>
+                <td colspan="2">Selected authors</td>
+              </tr>
+              <tr>
+                <td class="time">15:10 – 15:55</td>
+                <td>Panel Discussion</td>
+                <td colspan="2">Oversight of self-improving and agent-designed systems</td>
+              </tr>
+              <tr class="poster-row">
+                <td class="time">15:55 – 16:50</td>
+                <td colspan="3">Poster Session 2 &amp; Coffee</td>
+              </tr>
+              <tr>
+                <td class="time">16:50 – 17:00</td>
+                <td>Awards &amp; Closing Remarks</td>
+                <td colspan="2">Organizers</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="organizers">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Organizers</h2>
+          <p>This workshop is organized by</p>
+        </div>
+        <div class="row">
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+              <img src="assets/img/organizers/simon_yu.jpeg" alt="Simon Yu" class="img-fluid">
+              <br><a href="https://simonucl.github.io/" style="font-size: 1.2em; color: #00356B;">Simon Yu</a></br>
+              <p>Northeastern University</p>
+            </div>
+          </div>
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Derek+Chong&size=256&background=688E26&color=ffffff&bold=true&format=png" alt="Derek Chong" class="img-fluid">
+              <br><a href="https://nlp.stanford.edu/~derekch/" style="font-size: 1.2em; color: #00356B;">Derek Chong</a></br>
+              <p>Stanford University</p>
+            </div>
+          </div>
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Dilara+Soylu&size=256&background=688E26&color=ffffff&bold=true&format=png" alt="Dilara Soylu" class="img-fluid">
+              <br><a href="https://dilarasoylu.github.io/" style="font-size: 1.2em; color: #00356B;">Dilara Soylu</a></br>
+              <p>Stanford University</p>
+            </div>
+          </div>
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Jiuding+Sun&size=256&background=688E26&color=ffffff&bold=true&format=png" alt="Jiuding Sun" class="img-fluid">
+              <br><a href="https://jiudingsun01.github.io/" style="font-size: 1.2em; color: #00356B;">Jiuding Sun</a></br>
+              <p>Stanford University</p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
+              <img src="assets/img/organizers/zichen_liu.jpg" alt="Zichen Liu" class="img-fluid">
+              <br><a href="https://lkevinzc.github.io/" style="font-size: 1.2em; color: #00356B;">Zichen Liu</a></br>
+              <p>Google DeepMind</p>
+            </div>
+          </div>
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Chenglei+Si&size=256&background=688E26&color=ffffff&bold=true&format=png" alt="Chenglei Si" class="img-fluid">
+              <br><a href="https://noviscl.github.io/" style="font-size: 1.2em; color: #00356B;">Chenglei Si</a></br>
+              <p>Recursive Intelligence</p>
+            </div>
+          </div>
+          <!-- TODO(organizers): confirm Apurva's full name, homepage, and photo. -->
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+              <img src="https://ui-avatars.com/api/?name=Apurva+Gandhi&size=256&background=688E26&color=ffffff&bold=true&format=png" alt="Apurva Gandhi" class="img-fluid">
+              <br><a href="#" style="font-size: 1.2em; color: #00356B;">Apurva Gandhi</a></br>
+              <p>Carnegie Mellon University</p>
+            </div>
+          </div>
+          <div class="col-lg col-md-4 col-sm-6 col-6">
+            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
+              <img src="assets/img/organizers/weiyan_shi.jpg" alt="Weiyan Shi" class="img-fluid">
+              <br><a href="https://wyshi.github.io/" style="font-size: 1.2em; color: #00356B;">Weiyan Shi</a></br>
+              <p>Northeastern University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <br>
+
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright"></div>
+      <div class="credits">
+        Template adopted from <a href="https://living-agents.github.io/">Living Agents @ COLM 2026</a>.
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
