@@ -132,19 +132,13 @@
           <div class="col-lg-12">
             <h2>About The Workshop</h2>
             <p style="font-size: 18px;">
-              For the past two years, progress on language agents has come from making a <b>single agent</b> do more: browse the web, write and run code, call tools, and stay on task for hours. The next frontier is the <b>meta level</b>, the agent that acts on <i>other</i> agents.
+              Recent jumps in agent capability show early signs of <b>recursive self-improvement</b>. AlphaEvolve evolved and tested its own candidate programs and found faster algorithms. GEPA and Meta-Harness reflected on the traces of a whole language-model program to optimize it. The Darwin Gödel Machine and HyperAgents rewrote their own code and improved on a real software-engineering benchmark with no human edits. In each case the worker was an agent acting on <i>another</i> agent.
             </p>
             <p style="font-size: 18px;">
-              We call these higher-order agents <b>meta-agents</b>: agents that <b>design</b>, <b>optimize</b>, <b>supervise</b>, and <b>train</b> other agents. This is already happening, but it is split across communities that rarely talk:
+              We call these higher-order agents <b>meta-agents</b>: agents that <b>build</b>, <b>train</b>, <b>optimize</b>, or <b>improve</b> other agents, sometimes themselves. Most agents today are still assembled by hand. A meta-agent removes that limit, letting a model design, train, or optimize another model and search a space no human team covers by hand. Two problems stay open: when does a discovered or self-improved design actually generalize, and when a system improves, which change earned the credit?
             </p>
-            <ul style="font-size: 18px;">
-              <li>Automated design of agent architectures and the harness that wraps them (ADAS, Meta Agent Search, automated harness design).</li>
-              <li>Agents that recursively improve their own code (the Darwin Gödel Machine, self-taught optimizers).</li>
-              <li>Optimizers that compile and tune multi-module language-model programs (DSPy, GEPA).</li>
-              <li>The meta-learning tradition that asks how systems learn to learn.</li>
-            </ul>
             <p style="font-size: 18px;">
-              This workshop brings these threads under one roof and asks the question none of them has owned: how do we build and improve agents systematically, increasingly using agents to do it, and how do we keep a recursively self-improving system under control? It builds on the team's <a href="https://workshop-multi-turn-interaction.github.io/" target="_blank" rel="noopener noreferrer">1st Multi-Turn Interaction Workshop @ NeurIPS 2025</a>.
+              Capability forces a second question. When the thing being changed is itself an agent, a flawed design gets copied into every agent the search builds, and a system that edits itself can edit away its own safeguards. So every result raises the same question: <b>who evaluates and oversees an agent that builds or improves another agent, or itself?</b> We pair strong capability work with honest accounts of how methods fail, and we bring in oversight, governance, and management-science views from outside AI. The workshop builds on the team's <a href="https://workshop-multi-turn-interaction.github.io/" target="_blank" rel="noopener noreferrer">1st Multi-Turn Interaction Workshop @ NeurIPS 2025</a>.
             </p>
           </div>
         </div>
@@ -157,16 +151,16 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Topics</h2>
-          <p>We organize submissions around five themes. Topics include but are not limited to:</p>
+          <p>We invite work across the topics below, capability first, then evaluation, oversight, and governance. Topics include but are not limited to:</p>
         </div>
         <section id="topics">
           <div class="container">
             <div class="row mb-4">
               <div class="col-12">
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(1) Automated Design and Discovery of Agentic Systems:</b>
+                  <b style="font-size: 18px; color: #343a40;">(1) Automated Design and Discovery of Agent Harnesses:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    Most agent systems are still built by hand. We invite work on searching the space of agent architectures, tools, and scaffolds (Meta Agent Search, automated harness design); on telling when a discovered design generalizes past the tasks it was tuned on; and on the cost of running these searches at scale.
+                    Most agent harnesses are still built by hand. We invite work on searching the space of agent architectures, tools, and harnesses (Meta Agent Search, automated harness design), and on telling when a discovered design generalizes past the tasks it was tuned on.
                   </p>
                 </div>
               </div>
@@ -176,7 +170,7 @@
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
                   <b style="font-size: 18px; color: #343a40;">(2) Optimizing Compound AI Systems and Language-Model Programs:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    Once an agent is more than one model call, the problem is optimizing the whole program. We seek work on optimizers for multi-module systems (DSPy, GEPA, Trace), credit assignment across modules, inference-time search, context optimization, and the theory of when any of this converges.
+                    Once an agent is more than one model call, the problem is optimizing the whole program. We seek work on optimizers for multi-module systems (DSPy, GEPA, Trace), credit assignment across modules, inference-time search, and context optimization, including workflows and multi-agent systems.
                   </p>
                 </div>
               </div>
@@ -186,7 +180,7 @@
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
                   <b style="font-size: 18px; color: #343a40;">(3) Self-Improvement and Open-Ended Evolution:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    A meta-agent can point at itself. We welcome work on agents that recursively rewrite their own code (the Darwin Gödel Machine, self-taught optimizers), AI-generating algorithms and open-endedness, self-play and co-evolution, and honest analyses of how self-improving agents drift or game their own reward.
+                    A meta-agent can point at itself. We welcome work on agents that rewrite their own code (the Darwin Gödel Machine, self-taught optimizers), self-play and co-evolution, open-endedness, and honest analyses of how self-improving agents drift or game their own reward.
                   </p>
                 </div>
               </div>
@@ -194,9 +188,9 @@
             <div class="row mb-4">
               <div class="col-12">
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(4) Meta-Learning and Meta-RL for Agents:</b>
+                  <b style="font-size: 18px; color: #343a40;">(4) Evaluation and Benchmarks for Meta-Agent Capabilities:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    Learning how to learn predates language agents and gains new surface area here. We invite work connecting classical meta-learning and meta-RL to agent training: learned optimizers, learned reward and verification, tree-structured rollouts and finer-grained credit assignment, and curricula one agent proposes for another.
+                    Does a discovered or self-improved agent actually generalize? We want benchmarks and tests for meta-level methods, the ones that answer this question rather than leaderboards that hide the failure cases.
                   </p>
                 </div>
               </div>
@@ -204,9 +198,19 @@
             <div class="row mb-4">
               <div class="col-12">
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(5) Substrates, Evaluation, and Oversight for Meta-Agents:</b>
+                  <b style="font-size: 18px; color: #343a40;">(5) Human Oversight, Governance, and Management Science:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    Acting on another agent means watching, forking, and replaying its execution. We invite work on runtimes that treat agent execution as a first-class object, benchmarks for meta-level methods (not just agents doing tasks), and the oversight problem that self-improving and agent-designed systems create.
+                    Rollback and halt controls a deployer can actually trigger, who signs off before a discovered agent ships, and how to govern agents that manage other agents, including perspectives from management science and other fields outside AI.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
+                  <b style="font-size: 18px; color: #343a40;">(6) Red-Teaming and Safe Meta-Agents:</b>
+                  <p style="color: #6c757d; margin-top: 10px;">
+                    Making agent execution observable and auditable, red-teaming systems that act on other agents, and detecting reward gaming, over-optimization, and drift before a system acts on other agents at scale.
                   </p>
                 </div>
               </div>
@@ -240,7 +244,7 @@
           Submissions will be managed via OpenReview and remain private during review. All authors should maintain up-to-date OpenReview profiles for conflict-of-interest management and paper matching. The submission portal will be announced once the workshop is accepted.
         </p>
         <h3>Scope</h3>
-        We welcome contributions across the five themes above. Accepted papers are presented as posters, with a subset selected for oral or spotlight talks. The workshop is in person at NeurIPS 2026 in Sydney.
+        We welcome contributions across the topics above. Accepted papers are presented as posters, with a subset selected for oral or spotlight talks, and we give a <b>Best Social Impact</b> award to the work that best surfaces and contains the risks of acting on other agents, judged apart from raw capability. The workshop is in person at NeurIPS 2026 in Sydney.
         <br>
         <br>
         <h3>Submission Guidelines</h3>
@@ -251,10 +255,13 @@
           <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Short Papers</b>: at most 4 pages (main text)</li>
           <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Tiny Papers</b>: encouraged from students and under-resourced groups, welcoming simple ideas, modest results, follow-ups, or fresh perspectives.</li>
           <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Demo Track</b>: live demonstrations of meta-agent systems and tools, presented alongside the poster sessions.</li>
+          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Position Papers</b>: on the governance, oversight, and societal impact of meta-agents.</li>
           <li><span class="fa-li"><i class="fa fa-check"></i></span>References and appendices do not count toward the page limit, but the main text must be self-contained.</li>
         </ul>
         <h5>Meta-Agent Card</h5>
         <p>Every submission includes a one-page <b>Meta-Agent Card</b>: what the method optimizes and against which signal, the scope of change it makes to the agent it acts on, how a deployer would test that the result generalizes, the failure modes specific to acting on other agents (reward gaming, drift, brittle self-edits, runaway search), and the guardrails or rollback that catch them. The card is reviewed alongside the technical contribution, and we run a pre-deadline clinic to help newer and under-resourced groups complete it.</p>
+        <h5>Responsible-Use Statement</h5>
+        <p>Every submission also carries a short <b>responsible-use statement</b>: who could be harmed if the method is wrong or misused, and what would catch it. Like the Meta-Agent Card, it is reviewed with the paper, and a missing one is grounds for desk rejection.</p>
         <h5>Anonymity</h5>
         The workshop uses <b>double-blind review</b>. Submissions must be anonymized, with author names, affiliations, and acknowledgments removed and prior work cited in the third person.
         <br>
@@ -379,25 +386,25 @@
               <tr>
                 <td class="time">09:40 – 10:05</td>
                 <td>Invited Talk</td>
-                <td>Chelsea Finn (Stanford)</td>
-                <td>From Meta-Learning to Agents that Learn to Learn</td>
+                <td>Graham Neubig (CMU)</td>
+                <td>Automating and Evaluating the Agent Harness</td>
               </tr>
               <tr>
                 <td class="time">10:05 – 10:30</td>
                 <td>Invited Talk</td>
-                <td>Yu Su (NeoCognition &amp; OSU)</td>
-                <td>Continual Learning and Memory for Agents</td>
+                <td>Chelsea Finn (Stanford)</td>
+                <td>From Meta-Learning to Agents that Learn to Learn</td>
               </tr>
               <tr>
                 <td class="time">10:30 – 10:55</td>
                 <td>Invited Talk</td>
-                <td>Bo Li (UIUC)</td>
-                <td>Red-Teaming and Safety Evaluation for Meta-Agents</td>
+                <td>Robert Lange (Sakana AI)</td>
+                <td>Nature-Inspired and Evolutionary Methods for Self-Improving Agents</td>
               </tr>
               <tr>
                 <td class="time">10:55 – 11:20</td>
-                <td>Contributed Session 1: Negative Results and Red-Teaming</td>
-                <td colspan="2">Negative-result spotlights</td>
+                <td>Contributed Session 1: Oral + Spotlight Talks</td>
+                <td colspan="2">Selected authors</td>
               </tr>
               <tr class="poster-row">
                 <td class="time">11:20 – 12:30</td>
@@ -410,36 +417,36 @@
               <tr>
                 <td class="time">13:30 – 13:55</td>
                 <td>Invited Talk</td>
-                <td>Graham Neubig (CMU)</td>
-                <td>Automating and Evaluating the Agent Harness</td>
+                <td>Yu Su (NeoCognition &amp; OSU)</td>
+                <td>Continual Learning and Memory for Agents</td>
               </tr>
               <tr>
                 <td class="time">13:55 – 14:20</td>
-                <td>Invited Talk</td>
-                <td>Jenny Zhang (Recursive &amp; UBC)</td>
-                <td>Self-Improving Agents: Open-Ended Discovery and Its Failure Modes</td>
-              </tr>
-              <tr>
-                <td class="time">14:20 – 14:45</td>
-                <td>Invited Talk</td>
-                <td>Robert Lange (Sakana AI)</td>
-                <td>Nature-Inspired and Evolutionary Methods for Self-Improving Agents</td>
-              </tr>
-              <tr>
-                <td class="time">14:45 – 15:10</td>
                 <td>Invited Talk</td>
                 <td>Chen Sun (Google DeepMind)</td>
                 <td>World Models and Learned Environments for Agents</td>
               </tr>
               <tr>
+                <td class="time">14:20 – 14:45</td>
+                <td>Invited Talk</td>
+                <td>Jenny Zhang (Recursive &amp; UBC)</td>
+                <td>Self-Improving Agents: Open-Ended Discovery and Its Failure Modes</td>
+              </tr>
+              <tr>
+                <td class="time">14:45 – 15:10</td>
+                <td>Invited Talk</td>
+                <td>Bo Li (UIUC)</td>
+                <td>Red-Teaming and Safety Evaluation for Meta-Agents</td>
+              </tr>
+              <tr>
                 <td class="time">15:10 – 15:35</td>
-                <td>Oral + Spotlight Talks 2</td>
-                <td colspan="2">Selected authors</td>
+                <td>Contributed Session 2: Negative Results and Red-Teaming</td>
+                <td colspan="2">Negative-result spotlights</td>
               </tr>
               <tr>
                 <td class="time">15:35 – 16:20</td>
                 <td>Panel Discussion</td>
-                <td colspan="2">Overseeing Self-Improving and Agent-Designed Systems (Khattab, Finn, Chen Sun, Zhang, Bo Li)</td>
+                <td colspan="2"><b>Overseeing and Governing Self-Improving and Agent-Designed Systems</b> (Khattab, Finn, Chen Sun, Zhang, Bo Li)<br><i>Key question: when meta-agents build the sub-agents and oversee them too, what is the human still there for?</i></td>
               </tr>
               <tr class="poster-row">
                 <td class="time">16:20 – 17:05</td>
