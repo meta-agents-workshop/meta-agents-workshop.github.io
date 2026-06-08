@@ -132,13 +132,16 @@
           <div class="col-lg-12">
             <h2>About The Workshop</h2>
             <p style="font-size: 18px;">
-              Recent jumps in agent capability show early signs of <b>recursive self-improvement</b>. AlphaEvolve evolved and tested its own candidate programs and found faster algorithms. GEPA and Meta-Harness reflected on the traces of a whole language-model program to optimize it. The Darwin Gödel Machine and HyperAgents rewrote their own code and improved on a real software-engineering benchmark with no human edits. In each case the worker was an agent acting on <i>another</i> agent.
+              Most agentic systems today rely on manual design for their training, harnesses, and goals. As models grow more capable, new systems are emerging to automate this. AlphaEvolve writes and tests its own programs; GEPA and Meta-Harness use agents to optimize the trajectories of other agents, beating reinforcement learning at a fraction of the cost. We call these higher-order agents that <b>build</b>, <b>optimize</b>, and <b>supervise</b> other agents <b>meta-agents</b>.
             </p>
             <p style="font-size: 18px;">
-              We call these higher-order agents <b>meta-agents</b>: agents that <b>build</b>, <b>train</b>, <b>optimize</b>, or <b>improve</b> other agents, sometimes themselves. Most agents today are still assembled by hand. A meta-agent removes that limit, letting a model design, train, or optimize another model and search a space no human team covers by hand. Two problems stay open: when does a discovered or self-improved design actually generalize, and when a system improves, which change earned the credit?
+              Meta-agents will likely play an increasingly central role in how agentic systems are used and developed. Yet discourse on them stays dispersed across separate communities, from meta-learning to reinforcement learning to systems research. A systematic, interdisciplinary view is needed to address their potential for both use and misuse, convening core figures from these subfields alongside researchers in AI and organizational science.
             </p>
             <p style="font-size: 18px;">
-              Capability forces a second question. When the thing being changed is itself an agent, a flawed design gets copied into every agent the search builds, and a system that edits itself can edit away its own safeguards. So every result raises the same question: <b>who evaluates and oversees an agent that builds or improves another agent, or itself?</b> We pair strong capability work with honest accounts of how methods fail, and we bring in oversight, governance, and management-science views from outside AI. The workshop builds on the team's <a href="https://workshop-multi-turn-interaction.github.io/" target="_blank" rel="noopener noreferrer">1st Multi-Turn Interaction Workshop @ NeurIPS 2025</a>.
+              The shift from manual to automated agent design raises open <b>technical problems</b>. A meta-agent can design the harness, train the agent system, and enable continual learning and self-improvement. When does a discovered or self-improved design actually generalize, and which optimization methods and learning signals improve a meta-agent's capabilities?
+            </p>
+            <p style="font-size: 18px;">
+              As capabilities scale, <b>societal impact</b> needs careful oversight. A meta-agent acts like a manager, decomposing objectives and assigning tasks to worker agents, so a misaligned one can spawn and coordinate swarms of subordinate agents toward the wrong goal. Meta-agents can also manage humans, with risks of economic disruption and eroded autonomy. So every result raises the same question: <b>who evaluates and oversees an agent that builds or improves another agent, or itself?</b> The workshop covers the full lifecycle, design, training, evaluation, deployment, and oversight, and every submission carries a responsible-use statement. It builds on the team's <a href="https://workshop-multi-turn-interaction.github.io/" target="_blank" rel="noopener noreferrer">1st Multi-Turn Interaction Workshop @ NeurIPS 2025</a>.
             </p>
           </div>
         </div>
@@ -168,9 +171,9 @@
             <div class="row mb-4">
               <div class="col-12">
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(2) Optimizing Compound AI Systems and Language-Model Programs:</b>
+                  <b style="font-size: 18px; color: #343a40;">(2) Optimization and Post-Training of Compound Agentic Systems:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    Once an agent is more than one model call, the problem is optimizing the whole program. We seek work on optimizers for multi-module systems (DSPy, GEPA, Trace), credit assignment across modules, inference-time search, and context optimization, including workflows and multi-agent systems.
+                    Once an agent is more than one model call, the problem is optimizing the whole program. We seek work on optimizers for multi-module systems (DSPy, GEPA, Trace), credit assignment across modules, post-training of compound systems, inference-time search, and context optimization.
                   </p>
                 </div>
               </div>
@@ -180,7 +183,7 @@
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
                   <b style="font-size: 18px; color: #343a40;">(3) Self-Improvement and Open-Ended Evolution:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    A meta-agent can point at itself. We welcome work on agents that rewrite their own code (the Darwin Gödel Machine, self-taught optimizers), self-play and co-evolution, open-endedness, and honest analyses of how self-improving agents drift or game their own reward.
+                    A meta-agent can point at itself. We welcome work on agents that rewrite their own code (the Darwin G&ouml;del Machine, self-taught optimizers), self-play and co-evolution, open-endedness, and honest analyses of how self-improving agents drift or game their own reward.
                   </p>
                 </div>
               </div>
@@ -188,7 +191,7 @@
             <div class="row mb-4">
               <div class="col-12">
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(4) Evaluation and Benchmarks for Meta-Agent Capabilities:</b>
+                  <b style="font-size: 18px; color: #343a40;">(4) Evaluation and Benchmarks for Meta-Agents:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
                     Does a discovered or self-improved agent actually generalize? We want benchmarks and tests for meta-level methods, the ones that answer this question rather than leaderboards that hide the failure cases.
                   </p>
@@ -198,9 +201,9 @@
             <div class="row mb-4">
               <div class="col-12">
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(5) Human Oversight, Governance, and Management Science:</b>
+                  <b style="font-size: 18px; color: #343a40;">(5) Misalignment and Safety for Meta-Agents:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    Rollback and halt controls a deployer can actually trigger, who signs off before a discovered agent ships, and how to govern agents that manage other agents, including perspectives from management science and other fields outside AI.
+                    Making agent execution observable and auditable, red-teaming systems that act on other agents, and detecting reward gaming, over-optimization, and drift before a system acts on other agents at scale.
                   </p>
                 </div>
               </div>
@@ -208,9 +211,9 @@
             <div class="row mb-4">
               <div class="col-12">
                 <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(6) Red-Teaming and Safe Meta-Agents:</b>
+                  <b style="font-size: 18px; color: #343a40;">(6) Governance and Human Oversight of Meta-Agents:</b>
                   <p style="color: #6c757d; margin-top: 10px;">
-                    Making agent execution observable and auditable, red-teaming systems that act on other agents, and detecting reward gaming, over-optimization, and drift before a system acts on other agents at scale.
+                    Rollback and halt controls a deployer can actually trigger, who signs off before a discovered agent ships, and how to govern agents that manage other agents, including perspectives from management science and other fields outside AI.
                   </p>
                 </div>
               </div>
@@ -244,7 +247,7 @@
           Submissions will be managed via OpenReview and remain private during review. All authors should maintain up-to-date OpenReview profiles for conflict-of-interest management and paper matching. The submission portal will be announced once the workshop is accepted.
         </p>
         <h3>Scope</h3>
-        We welcome contributions across the topics above. Accepted papers are presented as posters, with a subset selected for oral or spotlight talks, and we give a <b>Best Social Impact</b> award to the work that best surfaces and contains the risks of acting on other agents, judged apart from raw capability. The workshop is in person at NeurIPS 2026 in Sydney.
+        We welcome contributions across the topics above. Accepted papers are presented as posters, with a subset selected for oral or spotlight talks, and we give a <b>Best Paper</b> award and a <b>Best Social Impact Paper</b> award for the work that most thoughtfully addresses the societal implications of meta-agents. The workshop is in person at NeurIPS 2026 in Sydney.
         <br>
         <br>
         <h3>Submission Guidelines</h3>
@@ -253,15 +256,12 @@
         <ul class="fa-ul">
           <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Full Papers</b>: at most 9 pages (main text)</li>
           <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Short Papers</b>: at most 4 pages (main text)</li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Tiny Papers</b>: encouraged from students and under-resourced groups, welcoming simple ideas, modest results, follow-ups, or fresh perspectives.</li>
           <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Demo Track</b>: live demonstrations of meta-agent systems and tools, presented alongside the poster sessions.</li>
           <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Position Papers</b>: on the governance, oversight, and societal impact of meta-agents.</li>
           <li><span class="fa-li"><i class="fa fa-check"></i></span>References and appendices do not count toward the page limit, but the main text must be self-contained.</li>
         </ul>
-        <h5>Meta-Agent Card</h5>
-        <p>Every submission includes a one-page <b>Meta-Agent Card</b>: what the method optimizes and against which signal, the scope of change it makes to the agent it acts on, how a deployer would test that the result generalizes, the failure modes specific to acting on other agents (reward gaming, drift, brittle self-edits, runaway search), and the guardrails or rollback that catch them. The card is reviewed alongside the technical contribution, and we run a pre-deadline clinic to help newer and under-resourced groups complete it.</p>
         <h5>Responsible-Use Statement</h5>
-        <p>Every submission also carries a short <b>responsible-use statement</b>: who could be harmed if the method is wrong or misused, and what would catch it. Like the Meta-Agent Card, it is reviewed with the paper, and a missing one is grounds for desk rejection.</p>
+        <p>Every submission also includes a short <b>responsible-use statement</b> covering the potential societal impacts of the proposed work and suggested mitigations. It is reviewed with the paper, and a missing one is grounds for desk rejection.</p>
         <h5>Anonymity</h5>
         The workshop uses <b>double-blind review</b>. Submissions must be anonymized, with author names, affiliations, and acknowledgments removed and prior work cited in the third person.
         <br>
