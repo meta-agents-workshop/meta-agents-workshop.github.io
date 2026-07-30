@@ -18,7 +18,10 @@ with inline styles and scripts.
 - `assets/`: people photos, sponsor logos, favicons, and the social card.
 - `HERO-ART-BRIEF.md`: the standing brief for the commissioned hero
   illustration (constraints, verification checklist, prompt).
-- `.github/workflows/pages.yml`: the Pages deploy.
+- `.github/workflows-pending/pages.yml`: the Pages deploy workflow. The
+  automation that authored this branch cannot push to `.github/workflows/`
+  (its token lacks the `workflow` scope), so after merging, move this file
+  to `.github/workflows/pages.yml` (one commit in the GitHub UI or locally).
 
 ## Branches and deployment
 
