@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  .card {
+    position: relative; width: 1200px; height: 630px; box-sizing: border-box;
+    background:
+      radial-gradient(120% 90% at 78% 22%, rgba(255,213,166,0.38) 0%, rgba(255,213,166,0) 55%),
+      linear-gradient(180deg, #a9bade 0%, #c6c2e1 34%, #e8cdb2 60%, #a97e74 80%, #46406a 93%, #10182e 100%);
+    display: flex; flex-direction: column; justify-content: center; padding: 0 72px;
+    font-family: 'Inter', sans-serif;
+  }
+  .chip {
+    align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 24px;
+    background: #2e3a86; color: #fff; padding: 8px 28px; border-radius: 999px; margin-bottom: 30px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 74px; line-height: 1.04;
+    color: #2e3a86; margin: 0 0 16px; text-shadow: 0 2px 18px rgba(246,243,236,0.9); max-width: 820px;
+  }
+  .sub { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 32px; color: #b7521e; margin: 0 0 30px; text-shadow: 0 2px 14px rgba(246,243,236,0.85); }
+  .meta { font-weight: 600; font-size: 26px; color: #fdf8ee; text-shadow: 0 1px 10px rgba(16,24,46,0.55); }
+  svg.art { position: absolute; right: 48px; bottom: 96px; width: 360px; color: rgba(16,24,46,0.42); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <svg class="art" viewBox="0 0 460 420" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+      <circle cx="230" cy="60" r="34" />
+      <circle cx="230" cy="60" r="22" stroke-dasharray="4 6" />
+      <circle cx="230" cy="52" r="5" />
+      <path d="M 218 70 Q 230 80 242 70" />
+      <path d="M 230 94 L 230 130 M 230 130 L 90 170 M 230 130 L 230 170 M 230 130 L 370 170" />
+      <circle cx="90" cy="196" r="26" /><circle cx="90" cy="190" r="4" /><path d="M 81 203 Q 90 210 99 203" />
+      <circle cx="230" cy="196" r="26" /><circle cx="230" cy="190" r="4" /><path d="M 221 203 Q 230 210 239 203" />
+      <circle cx="370" cy="196" r="26" /><circle cx="370" cy="190" r="4" /><path d="M 361 203 Q 370 210 379 203" />
+      <path d="M 90 222 L 90 254 M 90 254 L 48 286 M 90 254 L 132 286" />
+      <path d="M 230 222 L 230 254 M 230 254 L 188 286 M 230 254 L 272 286" />
+      <path d="M 370 222 L 370 254 M 370 254 L 328 286 M 370 254 L 412 286" />
+      <circle cx="48" cy="304" r="17" /><circle cx="132" cy="304" r="17" />
+      <circle cx="188" cy="304" r="17" /><circle cx="272" cy="304" r="17" />
+      <circle cx="328" cy="304" r="17" /><circle cx="412" cy="304" r="17" />
+    </svg>
+    <span class="chip">NeurIPS 2026 Workshop</span>
+    <h1>Managing Agents that Manage Agents</h1>
+    <p class="sub">Workshop on Responsible Use of Meta-Agents</p>
+    <p class="meta">December 11-12, 2026 · Sydney, Australia · Submissions due Aug 29</p>
+  </div>
+</body>
+</html>

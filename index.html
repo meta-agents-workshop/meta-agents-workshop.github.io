@@ -1,521 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Managing Agents that Manage Agents: Workshop on Responsible Use of Meta-Agents (NeurIPS 2026)</title>
-  <meta content="A NeurIPS 2026 workshop on meta-agents: how to responsibly build, optimize, train, and oversee self-improving agents that act on other agents." name="description">
-  <meta content="meta-agents, agentic AI, automated agent design, self-improvement, compound AI systems, meta-learning, NeurIPS 2026" name="keywords">
-
-
-  <link href="assets/img/meta-agents-logo.jpg" rel="icon" type="image/jpeg">
-  <link href="assets/img/meta-agents-logo.jpg" rel="apple-touch-icon">
-
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <link href="assets/css/style.css" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing Agents that Manage Agents · NeurIPS 2026 Workshop</title>
+  <meta name="description" content="A NeurIPS 2026 workshop on the responsible use of meta-agents: higher-order agents that build, optimize, and supervise other agents. Sydney, Australia, Dec 11-12, 2026. Submissions due Aug 29, 2026." />
+  <meta name="keywords" content="meta-agents, agentic AI, automated agent design, self-improvement, compound AI systems, meta-learning, NeurIPS 2026" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Managing Agents that Manage Agents · NeurIPS 2026 Workshop" />
+  <meta property="og:description" content="A NeurIPS 2026 workshop on the responsible use of meta-agents. Sydney, Australia, Dec 11-12, 2026. Submissions due Aug 29, 2026." />
+  <meta property="og:image" content="https://meta-agents-workshop.github.io/assets/social-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Managing Agents that Manage Agents · NeurIPS 2026 Workshop" />
+  <meta name="twitter:description" content="A NeurIPS 2026 workshop on the responsible use of meta-agents. Sydney, Australia, Dec 11-12, 2026." />
+  <meta name="twitter:image" content="https://meta-agents-workshop.github.io/assets/social-card.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/fav-32.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="assets/fav-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      font-family: Arial, sans-serif;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      margin: 20px 0;
+    :root {
+      --paper: #f6f3ec; --ink: #24283a; --soft: #5d6072; --line: #e3ded1;
+      --night: #10182e; --indigo: #2e3a86; --ember: #b7521e; --gold: #e3a75c;
+      --maxw: 1060px;
+      --disp: 'Space Grotesk', sans-serif; --sans: 'Inter', sans-serif;
     }
-    .schedule-table th,
-    .schedule-table td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ccc;
-      text-align: left;
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.68; -webkit-font-smoothing: antialiased; }
+    a { color: var(--indigo); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+    /*
+      HERO. Currently a hand-built CSS placeholder (dusk gradient + inline SVG
+      constellation). When the commissioned illustration arrives, replace the
+      two gradient layers below with:
+        background: url(assets/hero.png) center bottom / cover no-repeat;
+      keep the last gradient stop of the art converging to var(--night) at the
+      bottom edge so the Overview section continues the image invisibly,
+      then delete the .hero-placeholder-art block.
+    */
+    .hero {
+      position: relative;
+      height: 100vh; height: 100svh;
+      min-height: 580px;
+      background:
+        radial-gradient(120% 90% at 76% 26%, rgba(255,213,166,0.38) 0%, rgba(255,213,166,0) 55%),
+        linear-gradient(180deg, #a9bade 0%, #c6c2e1 34%, #e8cdb2 58%, #a97e74 77%, #46406a 90%, #10182e 100%);
+      overflow: hidden;
     }
-    .schedule-table th {
-      background-color: #f7f7f7;
-      font-weight: bold;
+    .hero-placeholder-art {
+      position: absolute; z-index: 1;
+      right: 4%; bottom: 16%;
+      width: min(36vw, 470px); height: auto;
+      color: rgba(16, 24, 46, 0.42);
+      pointer-events: none;
     }
-    .schedule-table tbody tr:nth-child(even) {
-      background-color: #f9f9f9;
+    .hero-inner {
+      position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; padding: 0 28px;
+      height: 100%; display: flex; flex-direction: column; justify-content: center;
+      align-items: flex-start; text-align: left;
     }
-    .schedule-table tbody tr:hover {
-      background-color: #f1f1f1;
+    .h-card { max-width: 660px; margin-bottom: 11vh; }
+    .h-chip {
+      display: inline-block; font-family: var(--disp); font-weight: 600; font-size: 0.92rem;
+      letter-spacing: 0.04em; background: var(--indigo); color: #fff;
+      padding: 6px 20px; border-radius: 999px; margin-bottom: 24px;
     }
-    @media (max-width: 768px) {
-      .schedule-table th,
-      .schedule-table td {
-        padding: 10px;
+    .hero h1 {
+      font-family: var(--disp); font-weight: 700; font-size: clamp(2.5rem, 4.9vw, 4.1rem);
+      line-height: 1.04; margin: 0 0 14px; color: var(--indigo);
+      text-shadow: 0 2px 18px rgba(246, 243, 236, 0.9);
+    }
+    .h-sub {
+      font-family: var(--disp); font-weight: 600; font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      color: var(--ember); margin: 0 0 22px; text-shadow: 0 2px 14px rgba(246, 243, 236, 0.85);
+    }
+    .h-lede {
+      font-size: 1.12rem; color: #2c3042; font-weight: 500; max-width: 590px;
+      text-shadow: 0 1px 12px rgba(246, 243, 236, 0.8); margin: 0 0 28px;
+    }
+    .h-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+      font-weight: 600; font-size: 1rem; margin: 0 0 26px;
+    }
+    .h-meta span { display: inline-flex; align-items: center; gap: 9px; color: #fdf8ee; text-shadow: 0 1px 10px rgba(16, 24, 46, 0.55); }
+    .h-meta svg { flex: none; color: var(--gold); filter: drop-shadow(0 1px 4px rgba(16, 24, 46, 0.45)); }
+    .h-actions { margin-bottom: 16px; }
+    .btn {
+      display: inline-block; font-family: var(--disp); font-weight: 600; font-size: 1.05rem;
+      padding: 13px 32px; border-radius: 999px; margin: 0 12px 10px 0; transition: transform .14s ease;
+    }
+    .btn:hover { transform: scale(1.05); text-decoration: none; }
+    .btn-e { background: var(--ember); color: #fff; box-shadow: 0 5px 0 #8a3d15; }
+    .btn-i { background: var(--indigo); color: #fff; box-shadow: 0 5px 0 #1f2a63; }
+    .h-deadline { font-weight: 600; font-size: 0.92rem; color: #d9d4e8; text-shadow: 0 1px 8px rgba(16, 24, 46, 0.55); margin: 0; }
+    .scroll-cue {
+      position: absolute; z-index: 3; left: 50%; bottom: 18px; transform: translateX(-50%);
+      color: #ece5d8; opacity: 0.92;
+      animation: cue-bob 1.7s ease-in-out infinite;
+    }
+    @keyframes cue-bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(9px); }
+    }
+    @media (max-width: 880px) {
+      /* Movie-poster treatment: tinted scrim, light text, centered. */
+      .hero { height: auto; min-height: 100svh; padding: 84px 0; }
+      .hero::before {
+        content: ""; position: absolute; inset: 0; z-index: 1;
+        background: linear-gradient(180deg, rgba(16,24,46,0.52) 0%, rgba(16,24,46,0.38) 45%, rgba(16,24,46,0.66) 100%);
       }
+      .hero-placeholder-art { right: 50%; transform: translateX(50%); bottom: 6%; width: 68vw; color: rgba(246,243,236,0.3); }
+      .hero-inner { align-items: center; text-align: center; }
+      .hero h1 { color: #f3efe4; text-shadow: 0 2px 16px rgba(16, 24, 46, 0.85); }
+      .h-sub { color: var(--gold); text-shadow: 0 2px 12px rgba(16, 24, 46, 0.85); }
+      .h-lede { color: #e6e2ee; text-shadow: 0 1px 10px rgba(16, 24, 46, 0.7); }
+      .h-meta { justify-content: center; }
+      .btn { margin: 0 6px 10px; }
     }
-    #organizers .speaker img,
-    #speakers .speaker img,
-    #panelists .speaker img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
+
+    section { padding: 60px 0; }
+    .night { background: var(--night); color: #d5d3e2; }
+    .night section { padding: 44px 0; }
+    .night .stitle { color: #f1eee2; }
+    .night .ov { color: #cfcde0; }
+    .night a { color: #a3b2ea; }
+    .dawn {
+      height: 320px;
+      background: linear-gradient(180deg, #10182e 0%, #2c3157 32%, #7d6390 56%, #d8a988 76%, #efe0c8 90%, var(--paper) 100%);
     }
-    #sponsors .speaker img {
-      width: 300px;
-      height: auto;
-      object-fit: contain;
-      margin-bottom: 15px;
+    section.tinted {
+      background: linear-gradient(180deg, rgba(238,231,214,0) 0%, #eee7d6 22%, #eee7d6 78%, rgba(238,231,214,0) 100%);
+      padding: 86px 0;
     }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .scroll-cue { animation: none; }
+    }
+    .stitle { font-family: var(--disp); font-weight: 700; font-size: clamp(1.9rem, 3.4vw, 2.5rem); text-align: center; margin: 0 0 10px; color: var(--ink); }
+    .divider { display: block; width: 170px; margin: 0 auto 38px; height: auto; opacity: 0.9; }
+    .ov { font-size: 1.05rem; margin: 0 0 20px; }
+    .hl {
+      padding: 1px 8px; border: 1.5px solid var(--ember); border-radius: 9px;
+      box-decoration-break: clone; -webkit-box-decoration-break: clone;
+    }
+    .night .hl { color: #f2d9c2; }
+    .narrow { max-width: 780px; margin: 0 auto; text-align: left; }
+    .c-h3 { margin: 38px 0 10px; font-size: 1.35rem; font-weight: 600; font-family: var(--disp); }
+    .c-h4 { margin: 24px 0 4px; font-size: 1rem; font-weight: 700; color: var(--indigo); }
+    .c-p { margin: 6px 0 14px; }
+    .c-topic { margin: 4px 0 16px; color: #494d60; }
+    .c-guide { list-style: none; padding: 0; margin: 8px 0 20px; }
+    .c-guide li { padding: 9px 0; border-bottom: 1px solid var(--line); }
+    .people { display: flex; flex-wrap: wrap; gap: 26px 24px; justify-content: center; margin-top: 36px; }
+    .person { width: 232px; text-align: center; }
+    .avatar { width: 118px; height: 118px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 3px solid var(--indigo); }
+    .p-name { font-weight: 700; font-family: var(--disp); font-size: 1.06rem; }
+    .p-name a { color: inherit; }
+    .p-affil { font-size: 0.86rem; color: var(--soft); }
+    .p-bio { font-size: 0.84rem; color: var(--soft); line-height: 1.5; margin: 8px 0 0; }
+    #speakers .narrow { max-width: 1040px; }
+    #speakers .person {
+      width: 240px; padding: 24px 16px 20px;
+      background: rgba(255, 255, 255, 0.055); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 18px;
+    }
+    #speakers .avatar { width: 124px; height: 124px; border: 3px solid var(--gold); box-shadow: 0 0 0 6px rgba(227, 167, 92, 0.12); }
+    #speakers .p-name { color: #f1eee2; }
+    #speakers .p-name a { color: inherit; }
+    #speakers .p-affil, #speakers .p-bio { color: #a9a4c4; }
+    .p-role { font-family: var(--disp); font-weight: 600; font-size: 0.76rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+    .p-tent { color: #cf9576; }
+    .c-note { font-style: italic; font-size: 0.9rem; color: var(--soft); margin-top: 16px; text-align: center; }
+    .c-center { text-align: center; }
+    #organizers .narrow { max-width: 1040px; }
+
+    .dates-list { max-width: 600px; margin: 0 auto; }
+    .dates-list li { display: flex; justify-content: space-between; gap: 16px; font-weight: 600; }
+    .dates-list .d-val { color: var(--ember); font-family: var(--disp); text-align: right; }
+
+    .sched-scroll { overflow-x: auto; margin-top: 8px; }
+    .sched { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 0.95rem; }
+    .sched th {
+      font-family: var(--disp); font-weight: 600; text-align: left; padding: 10px 14px;
+      border-bottom: 2px solid var(--ink); white-space: nowrap;
+    }
+    .sched td { padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .sched td.time { white-space: nowrap; font-weight: 600; color: var(--indigo); }
+    .sched .poster-row td { background: #e7ebf6; }
+    .sched .break-row td { background: #f2e8d2; }
+
+    .sponsor-block { margin-top: 64px; text-align: center; }
+    .sponsor-block h3 { font-family: var(--disp); font-weight: 600; font-size: 1.15rem; margin: 0 0 18px; color: var(--soft); }
+    .sponsor-block img { height: 74px; width: auto; }
+
+    .finale-sec { height: 170vh; height: 170svh; position: relative; background: var(--paper); }
+    .finale-pin {
+      position: sticky; top: 22vh; top: 22svh; height: 56vh; height: 56svh; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .finale-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; text-align: center; width: 100%; }
+    .finale-svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .finale-svg path { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.88; }
+    .finale-cap { font-family: var(--disp); font-weight: 600; font-size: 1.12rem; color: var(--soft); margin: 16px 0 0; }
+
+    footer.foot { background: #273272; color: #dcd8ec; text-align: center; padding: 54px 24px; }
+    footer.foot .t { font-family: var(--disp); font-weight: 700; font-size: 1.5rem; color: #fff; }
+    footer.foot .s { font-size: 0.9rem; margin-top: 8px; color: #b9b3d9; }
+    footer.foot .reach { font-size: 0.95rem; color: #cdc7e4; margin: 26px auto 4px; line-height: 1.9; }
+    footer.foot .reach a, footer.foot .soc a { color: var(--gold); font-weight: 700; }
+    footer.foot .soc { font-size: 0.9rem; color: #b9b3d9; margin: 4px 0 0; }
   </style>
 </head>
-
 <body>
-
-  <header id="header" class="d-flex align-items-center">
-    <div class="container-fluid container-xxl d-flex align-items-center">
-
-      <div id="logo" class="me-auto">
-        <a href="index.html" class="scrollto" style="font-weight: 800; font-size: 1.25em; color: #fff; text-decoration: none;">Managing Agents that Manage Agents</a>
-      </div>
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#topic">Topics</a></li>
-          <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
-          <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
-          <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
-          <li><a class="nav-link scrollto" href="#organizers">Organizers</a></li>
-          <li><a class="nav-link scrollto" href="mailto:meta-agents-workshop@googlegroups.com">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <section id="hero">
-    <div class="hero-container" data-aos="zoom-in" data-aos-delay="200">
-      <h1 class="mb-4 pb-0" style="text-transform: none;">
-        Managing Agents that Manage Agents<br>
-      </h1>
-      <h2 class="mb-4 pb-0" style="text-transform: none; color: white; font-size: 1.3em;">
-        Workshop on Responsible Use of Meta-Agents
-      </h2>
-      <h2 class="mb-4 pb-0" style="text-transform: none; color: white;">
-        NeurIPS 2026 &middot; December 11-12, 2026 &middot; Sydney, Australia
-      </h2>
-
-      <div class="social-links" style="margin-top: 25px;">
-        <div style="margin-bottom: 20px; color: white; font-size: 1.2em;">
-          Meta-agents are increasingly used to train, manage, and supervise other agents, and even people. How do we ensure this capability develops responsibly?
+  <section class="hero">
+    <!-- Placeholder art: a constellation org-chart of agents managing agents.
+         Swapped out when the commissioned hero illustration lands. -->
+    <svg class="hero-placeholder-art" viewBox="0 0 460 420" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+      <circle cx="230" cy="60" r="34" />
+      <circle cx="230" cy="60" r="22" stroke-dasharray="4 6" />
+      <circle cx="230" cy="52" r="5" />
+      <path d="M 218 70 Q 230 80 242 70" />
+      <path d="M 230 94 L 230 130 M 230 130 L 90 170 M 230 130 L 230 170 M 230 130 L 370 170" />
+      <circle cx="90" cy="196" r="26" />
+      <circle cx="90" cy="190" r="4" />
+      <path d="M 81 203 Q 90 210 99 203" />
+      <circle cx="230" cy="196" r="26" />
+      <circle cx="230" cy="190" r="4" />
+      <path d="M 221 203 Q 230 210 239 203" />
+      <circle cx="370" cy="196" r="26" />
+      <circle cx="370" cy="190" r="4" />
+      <path d="M 361 203 Q 370 210 379 203" />
+      <path d="M 90 222 L 90 254 M 90 254 L 48 286 M 90 254 L 132 286" />
+      <path d="M 230 222 L 230 254 M 230 254 L 188 286 M 230 254 L 272 286" />
+      <path d="M 370 222 L 370 254 M 370 254 L 328 286 M 370 254 L 412 286" />
+      <circle cx="48" cy="304" r="17" /><circle cx="132" cy="304" r="17" />
+      <circle cx="188" cy="304" r="17" /><circle cx="272" cy="304" r="17" />
+      <circle cx="328" cy="304" r="17" /><circle cx="412" cy="304" r="17" />
+      <path d="M 48 300 a 2 2 0 1 0 0.1 0 M 132 300 a 2 2 0 1 0 0.1 0 M 188 300 a 2 2 0 1 0 0.1 0 M 272 300 a 2 2 0 1 0 0.1 0 M 328 300 a 2 2 0 1 0 0.1 0 M 412 300 a 2 2 0 1 0 0.1 0" />
+      <path d="M 20 368 L 440 368" stroke-dasharray="2 8" />
+    </svg>
+    <div class="hero-inner">
+      <div class="h-card">
+        <span class="h-chip">NeurIPS 2026 Workshop</span>
+        <h1>Managing Agents<br />that Manage Agents</h1>
+        <p class="h-sub">Workshop on Responsible Use of Meta-Agents</p>
+        <p class="h-lede">Meta-agents are increasingly used to train, manage, and supervise other agents, and even people. How do we ensure this capability develops responsibly?</p>
+        <p class="h-meta">
+          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>December 11-12, 2026</span>
+          <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>Sydney, Australia</span>
+        </p>
+        <div class="h-actions">
+          <a class="btn btn-e" href="#cfp">Call for Papers</a>
+          <a class="btn btn-i" href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/Meta-Agents" target="_blank" rel="noopener">Submit on OpenReview</a>
         </div>
-        <a href="https://x.com/MetaAgentWkshop" target="_blank" rel="noopener noreferrer" title="Follow @MetaAgentWkshop on X" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border: 1px solid rgba(255,255,255,0.5); border-radius: 30px; color: #fff; text-decoration: none; font-weight: 600;">
-          <i class="bi bi-twitter-x"></i> Follow @MetaAgentWkshop
-        </a>
+        <p class="h-deadline">Submissions due August 29, 2026 (AoE)</p>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#about" aria-label="Scroll to overview">
+      <svg width="34" height="20" viewBox="0 0 34 20" fill="none" aria-hidden="true"><path d="M3 3 L17 16 L31 3" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </section>
+
+  <div class="night">
+  <section id="about">
+    <div class="wrap reveal">
+      <h2 class="stitle">Overview</h2>
+      <svg class="divider" viewBox="0 0 170 22" aria-hidden="true"><g fill="none" stroke-linecap="round"><circle cx="85" cy="11" r="7" fill="none" stroke="#e3a75c" stroke-width="2.2"/><circle cx="85" cy="11" r="2.6" fill="#e3a75c" stroke="none"/><path d="M 20 11 L 70 11 M 100 11 L 150 11" stroke="#6b79c9" stroke-width="2.2" stroke-dasharray="1 8"/><path d="M 20 7 L 20 15 M 150 7 L 150 15" stroke="#6b79c9" stroke-width="2.2"/></g></svg>
+      <div class="narrow">
+        <p class="ov">Most agentic systems today rely on manual design for their training, harnesses, and goals. As models grow more capable, new systems are emerging to automate this. AlphaEvolve writes and tests its own programs; GEPA and Meta-Harness use agents to optimize the trajectories of other agents, beating reinforcement learning at a fraction of the cost. We call these higher-order agents that build, optimize, and supervise other agents <span class="hl">meta-agents</span>.</p>
+        <p class="ov">Meta-agents will likely play an increasingly central role in how agentic systems are used and developed. Yet discourse on them stays dispersed across separate communities, from meta-learning to reinforcement learning to systems research. A systematic, interdisciplinary view is needed to address their potential for both use and misuse, convening core figures from these subfields alongside researchers in AI and organizational science.</p>
+        <p class="ov">The shift from manual to automated agent design raises open <span class="hl">technical problems</span>. A meta-agent can design the harness, train the agent system, and enable continual learning and self-improvement. When does a discovered or self-improved design actually generalize, and which optimization methods and learning signals improve a meta-agent's capabilities?</p>
+        <p class="ov">As capabilities scale, societal impact needs careful oversight. A meta-agent acts like a manager, decomposing objectives and assigning tasks to worker agents, so a misaligned one can spawn and coordinate swarms of subordinate agents toward the wrong goal. Meta-agents can also manage humans, with risks of economic disruption and eroded autonomy. So every result raises the same question: <span class="hl">who evaluates and oversees an agent that builds or improves another agent, or itself?</span> The workshop covers the full lifecycle, design, training, evaluation, deployment, and oversight, and every submission carries a responsible-use statement.</p>
       </div>
     </div>
   </section>
 
-  <main id="main">
-
-    <section id="about">
-      <div class="container position-relative" data-aos="fade-up">
-        <div class="row">
-          <div class="col-lg-12">
-            <h2>About The Workshop</h2>
-            <p style="font-size: 18px;">
-              Most agentic systems today rely on manual design for their training, harnesses, and goals. As models grow more capable, new systems are emerging to automate this. AlphaEvolve writes and tests its own programs; GEPA and Meta-Harness use agents to optimize the trajectories of other agents, beating reinforcement learning at a fraction of the cost. We call these higher-order agents that <b>build</b>, <b>optimize</b>, and <b>supervise</b> other agents <b>meta-agents</b>.
-            </p>
-            <p style="font-size: 18px;">
-              Meta-agents will likely play an increasingly central role in how agentic systems are used and developed. Yet discourse on them stays dispersed across separate communities, from meta-learning to reinforcement learning to systems research. A systematic, interdisciplinary view is needed to address their potential for both use and misuse, convening core figures from these subfields alongside researchers in AI and organizational science.
-            </p>
-            <p style="font-size: 18px;">
-              The shift from manual to automated agent design raises open <b>technical problems</b>. A meta-agent can design the harness, train the agent system, and enable continual learning and self-improvement. When does a discovered or self-improved design actually generalize, and which optimization methods and learning signals improve a meta-agent's capabilities?
-            </p>
-            <p style="font-size: 18px;">
-              As capabilities scale, <b>societal impact</b> needs careful oversight. A meta-agent acts like a manager, decomposing objectives and assigning tasks to worker agents, so a misaligned one can spawn and coordinate swarms of subordinate agents toward the wrong goal. Meta-agents can also manage humans, with risks of economic disruption and eroded autonomy. So every result raises the same question: <b>who evaluates and oversees an agent that builds or improves another agent, or itself?</b> The workshop covers the full lifecycle, design, training, evaluation, deployment, and oversight, and every submission carries a responsible-use statement.
-            </p>
-          </div>
+  <section id="speakers">
+    <div class="wrap reveal">
+      <h2 class="stitle">Speakers &amp; Panelists</h2>
+      <svg class="divider" viewBox="0 0 170 22" aria-hidden="true"><g fill="none" stroke-linecap="round"><circle cx="85" cy="11" r="7" fill="none" stroke="#e3a75c" stroke-width="2.2"/><circle cx="85" cy="11" r="2.6" fill="#e3a75c" stroke="none"/><path d="M 20 11 L 70 11 M 100 11 L 150 11" stroke="#6b79c9" stroke-width="2.2" stroke-dasharray="1 8"/><path d="M 20 7 L 20 15 M 150 7 L 150 15" stroke="#6b79c9" stroke-width="2.2"/></g></svg>
+      <div class="narrow">
+        <div class="people">
+          <div class="person"><img class="avatar" src="assets/img/speakers/graham_neubig.jpg" alt="Graham Neubig" /><div class="p-name"><a href="https://www.phontron.com/" target="_blank" rel="noopener">Graham Neubig</a></div><div class="p-affil">Carnegie Mellon University</div><div class="p-role">Speaker</div><p class="p-bio">Talk: Automating and Evaluating the Agent Harness</p></div>
+          <div class="person"><img class="avatar" src="assets/img/speakers/finn.jpg" alt="Chelsea Finn" /><div class="p-name"><a href="https://ai.stanford.edu/~cbfinn/" target="_blank" rel="noopener">Chelsea Finn</a></div><div class="p-affil">Stanford University</div><div class="p-role">Speaker &amp; Panelist <span class="p-tent">(Tentative)</span></div><p class="p-bio">Talk: From Meta-Learning to Agents that Learn to Learn</p></div>
+          <div class="person"><img class="avatar" src="assets/img/speakers/jenny_zhang.jpg" alt="Jenny Zhang" /><div class="p-name"><a href="https://www.jennyzhangzt.com/" target="_blank" rel="noopener">Jenny Zhang</a></div><div class="p-affil">Recursive Superintelligence &amp; UBC</div><div class="p-role">Speaker</div><p class="p-bio">Talk: Self-Improving Agents and Their Failure Modes</p></div>
+          <div class="person"><img class="avatar" src="assets/img/speakers/robert_lange.jpg" alt="Robert Lange" /><div class="p-name"><a href="https://roberttlange.com/" target="_blank" rel="noopener">Robert Lange</a></div><div class="p-affil">Sakana AI</div><div class="p-role">Speaker</div><p class="p-bio">Talk: Evolutionary Methods for Self-Improving Agents</p></div>
+          <div class="person"><img class="avatar" src="assets/img/speakers/bo_li.jpg" alt="Bo Li" /><div class="p-name"><a href="https://aisecure.github.io/" target="_blank" rel="noopener">Bo Li</a></div><div class="p-affil">University of Illinois Urbana-Champaign</div><div class="p-role">Speaker &amp; Panelist</div><p class="p-bio">Talk: How Meta-Agents Could Help on Safety Evaluation</p></div>
+          <div class="person"><img class="avatar" src="assets/img/speakers/hancheng_cao.jpg" alt="Hancheng Cao" /><div class="p-name"><a href="https://hanchengcao.me/" target="_blank" rel="noopener">Hancheng Cao</a></div><div class="p-affil">Emory University</div><div class="p-role">Speaker &amp; Panelist</div><p class="p-bio">Talk: AI Agents that Manage People: Work, Labor, and Oversight</p></div>
+          <div class="person"><img class="avatar" src="assets/img/speakers/yuandong_tian.jpg" alt="Yuandong Tian" /><div class="p-name"><a href="https://yuandong-tian.com/" target="_blank" rel="noopener">Yuandong Tian</a></div><div class="p-affil">Recursive</div><div class="p-role">Panelist</div><p class="p-bio">RL, planning, and efficient reasoning for self-improving AI</p></div>
+          <div class="person"><img class="avatar" src="assets/img/speakers/chen_sun.jpg" alt="Chen Sun" /><div class="p-name"><a href="https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Chen Sun</a></div><div class="p-affil">Google DeepMind</div><div class="p-role">Panelist</div><p class="p-bio">World models and open-endedness for training and evaluating agents</p></div>
         </div>
+        <p class="c-note">Talk topics are illustrative and finalized with each speaker.</p>
       </div>
-    </section>
+    </div>
+  </section>
+  </div>
 
-    <section id="topic" class="section-with-bg">
-      <br>
-      <br>
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Topics</h2>
-          <p>We invite work across the topics below, capability first, then evaluation, oversight, and governance. Topics include but are not limited to:</p>
-        </div>
-        <section id="topics">
-          <div class="container">
-            <div class="row mb-4">
-              <div class="col-12">
-                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(1) Automated Design and Discovery of Agent Harnesses:</b>
-                  <p style="color: #6c757d; margin-top: 10px;">
-                    Most agent harnesses are still built by hand. We invite work on searching the space of agent architectures, tools, and harnesses (Meta Agent Search, automated harness design), and on telling when a discovered design generalizes past the tasks it was tuned on.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-12">
-                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(2) Optimization and Post-Training of Compound Agentic Systems:</b>
-                  <p style="color: #6c757d; margin-top: 10px;">
-                    Once an agent is more than one model call, the problem is optimizing the whole program. We seek work on optimizers for multi-module systems (DSPy, GEPA, Trace), credit assignment across modules, post-training of compound systems, inference-time search, and context optimization.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-12">
-                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(3) Self-Improvement and Open-Ended Evolution:</b>
-                  <p style="color: #6c757d; margin-top: 10px;">
-                    A meta-agent can point at itself. We welcome work on agents that rewrite their own code (the Darwin G&ouml;del Machine, self-taught optimizers), self-play and co-evolution, open-endedness, and honest analyses of how self-improving agents drift or game their own reward.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-12">
-                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(4) Evaluation and Benchmarks for Meta-Agents:</b>
-                  <p style="color: #6c757d; margin-top: 10px;">
-                    Does a discovered or self-improved agent actually generalize? We want benchmarks and tests for meta-level methods, the ones that answer this question rather than leaderboards that hide the failure cases.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-12">
-                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(5) Misalignment and Safety for Meta-Agents:</b>
-                  <p style="color: #6c757d; margin-top: 10px;">
-                    Making agent execution observable and auditable, red-teaming systems that act on other agents, and detecting reward gaming, over-optimization, and drift before a system acts on other agents at scale.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col-12">
-                <div class="topic-panel interactive-panel p-4 border shadow-sm rounded" style="background: #ffffff;">
-                  <b style="font-size: 18px; color: #343a40;">(6) Governance and Human Oversight of Meta-Agents:</b>
-                  <p style="color: #6c757d; margin-top: 10px;">
-                    Rollback and halt controls a deployer can actually trigger, who signs off before a discovered agent ships, and how to govern agents that manage other agents, including perspectives from management science and other fields outside AI.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <br>
-      <br>
-    </section>
+  <div class="dawn"></div>
 
-    <section id="cfp">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Call For Papers</h2>
-        </div>
-        <p>
-          <b>Managing Agents that Manage Agents</b> (NeurIPS 2026) invites submissions on architectures, algorithms, theory, empirical studies, benchmarks, and position papers about agents that design, optimize, supervise, train, or improve other agents. Submissions must present original, unpublished work that has not appeared at NeurIPS or other archival machine-learning venues.
-        </p>
-        <h3>Key Dates</h3>
-        <ul class="fa-ul">
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Submission Deadline</b>: <span style="color: red; font-weight: bold;">August 29, 2026, AoE</span></li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Notification</b>: <span style="color: red; font-weight: bold;">on or before September 29, 2026, AoE</span></li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Workshop Date</b>: December 11-12, 2026 (Sydney)</li>
+  <section id="cfp">
+    <div class="wrap reveal">
+      <h2 class="stitle">Call for Papers</h2>
+      <svg class="divider" viewBox="0 0 170 22" aria-hidden="true"><g fill="none" stroke-linecap="round"><circle cx="85" cy="11" r="7" fill="none" stroke="#b7521e" stroke-width="2.2"/><circle cx="85" cy="11" r="2.6" fill="#b7521e" stroke="none"/><path d="M 20 11 L 70 11 M 100 11 L 150 11" stroke="#2e3a86" stroke-width="2.2" stroke-dasharray="1 8"/><path d="M 20 7 L 20 15 M 150 7 L 150 15" stroke="#2e3a86" stroke-width="2.2"/></g></svg>
+      <div class="narrow">
+        <p class="c-p"><strong>Managing Agents that Manage Agents</strong> (NeurIPS 2026) invites submissions on architectures, algorithms, theory, empirical studies, benchmarks, and position papers about agents that design, optimize, supervise, train, or improve other agents. Submissions must present original, unpublished work that has not appeared at NeurIPS or other archival machine-learning venues.</p>
+
+        <h3 class="c-h3">Topics of Interest</h3>
+        <p class="c-p">We invite work across the topics below, capability first, then evaluation, oversight, and governance. Topics include but are not limited to:</p>
+        <h4 class="c-h4">1. Automated Design and Discovery of Agent Harnesses</h4>
+        <p class="c-topic">Most agent harnesses are still built by hand. We invite work on searching the space of agent architectures, tools, and harnesses (Meta Agent Search, automated harness design), and on telling when a discovered design generalizes past the tasks it was tuned on.</p>
+        <h4 class="c-h4">2. Optimization and Post-Training of Compound Agentic Systems</h4>
+        <p class="c-topic">Once an agent is more than one model call, the problem is optimizing the whole program. We seek work on optimizers for multi-module systems (DSPy, GEPA, Trace), credit assignment across modules, post-training of compound systems, inference-time search, and context optimization.</p>
+        <h4 class="c-h4">3. Self-Improvement and Open-Ended Evolution</h4>
+        <p class="c-topic">A meta-agent can point at itself. We welcome work on agents that rewrite their own code (the Darwin G&ouml;del Machine, self-taught optimizers), self-play and co-evolution, open-endedness, and honest analyses of how self-improving agents drift or game their own reward.</p>
+        <h4 class="c-h4">4. Evaluation and Benchmarks for Meta-Agents</h4>
+        <p class="c-topic">Does a discovered or self-improved agent actually generalize? We want benchmarks and tests for meta-level methods, the ones that answer this question rather than leaderboards that hide the failure cases.</p>
+        <h4 class="c-h4">5. Misalignment and Safety for Meta-Agents</h4>
+        <p class="c-topic">Making agent execution observable and auditable, red-teaming systems that act on other agents, and detecting reward gaming, over-optimization, and drift before a system acts on other agents at scale.</p>
+        <h4 class="c-h4">6. Governance and Human Oversight of Meta-Agents</h4>
+        <p class="c-topic">Rollback and halt controls a deployer can actually trigger, who signs off before a discovered agent ships, and how to govern agents that manage other agents, including perspectives from management science and other fields outside AI.</p>
+
+        <h3 class="c-h3">Scope and Awards</h3>
+        <p class="c-p">Accepted papers are presented as posters, with a subset selected for oral or spotlight talks. We give a <strong>Best Paper</strong> award and a <strong>Best Social Impact Paper</strong> award for the work that most thoughtfully addresses the societal implications of meta-agents. The workshop is in person at NeurIPS 2026 in Sydney.</p>
+
+        <h3 class="c-h3">Submission Guidelines</h3>
+        <ul class="c-guide">
+          <li><strong>Format:</strong> Submissions must be in English and use the NeurIPS 2026 workshop LaTeX template, submitted as a single PDF. Full papers are at most 9 pages of main text; short papers at most 4 pages. References and appendices do not count toward the page limit, but the main text must be self-contained.</li>
+          <li><strong>Demo track:</strong> Live demonstrations of meta-agent systems and tools, presented alongside the poster sessions.</li>
+          <li><strong>Position papers:</strong> On the governance, oversight, and societal impact of meta-agents.</li>
+          <li><strong>Responsible-use statement:</strong> Every submission includes a short statement covering the potential societal impacts of the proposed work and suggested mitigations. It is reviewed with the paper, and a missing one is grounds for desk rejection.</li>
+          <li><strong>Anonymity:</strong> The workshop uses double-blind review. Submissions must be anonymized, with author names, affiliations, and acknowledgments removed and prior work cited in the third person.</li>
+          <li><strong>Non-archival:</strong> The workshop is non-archival. Papers under review elsewhere are welcome, and accepted papers may be published at other venues afterward. Work already published at NeurIPS or other archival ML venues should not be submitted.</li>
         </ul>
-        All deadlines follow the <a href="https://time.is/Anywhere_on_Earth">Anywhere on Earth (AoE)</a> timezone.
-        <br>
-        <br>
-        <h3>Submission Site</h3>
-        <p>
-          Submissions are managed via OpenReview and remain private during review. All authors should maintain up-to-date OpenReview profiles for conflict-of-interest management and paper matching. Submit your paper at the <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/Meta-Agents" target="_blank" rel="noopener noreferrer"><b>OpenReview submission portal</b></a>.
-        </p>
-        <h3>Scope</h3>
-        We welcome contributions across the topics above. Accepted papers are presented as posters, with a subset selected for oral or spotlight talks, and we give a <b>Best Paper</b> award and a <b>Best Social Impact Paper</b> award for the work that most thoughtfully addresses the societal implications of meta-agents. The workshop is in person at NeurIPS 2026 in Sydney.
-        <br>
-        <br>
-        <h3>Submission Guidelines</h3>
-        <h5>Formatting</h5>
-        Submissions must be in English and use the NeurIPS 2026 workshop LaTeX template. Papers are submitted as a <b>single PDF</b>:
-        <ul class="fa-ul">
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Full Papers</b>: at most 9 pages (main text)</li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Short Papers</b>: at most 4 pages (main text)</li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Demo Track</b>: live demonstrations of meta-agent systems and tools, presented alongside the poster sessions.</li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span><b>Position Papers</b>: on the governance, oversight, and societal impact of meta-agents.</li>
-          <li><span class="fa-li"><i class="fa fa-check"></i></span>References and appendices do not count toward the page limit, but the main text must be self-contained.</li>
+        <p class="c-p">Submissions are managed via <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/Meta-Agents" target="_blank" rel="noopener"><strong>OpenReview</strong></a> and remain private during review. All authors should maintain up-to-date OpenReview profiles for conflict-of-interest management and paper matching.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dates" class="tinted">
+    <div class="wrap reveal">
+      <h2 class="stitle">Important Dates</h2>
+      <svg class="divider" viewBox="0 0 170 22" aria-hidden="true"><g fill="none" stroke-linecap="round"><circle cx="85" cy="11" r="7" fill="none" stroke="#b7521e" stroke-width="2.2"/><circle cx="85" cy="11" r="2.6" fill="#b7521e" stroke="none"/><path d="M 20 11 L 70 11 M 100 11 L 150 11" stroke="#2e3a86" stroke-width="2.2" stroke-dasharray="1 8"/><path d="M 20 7 L 20 15 M 150 7 L 150 15" stroke="#2e3a86" stroke-width="2.2"/></g></svg>
+      <div class="narrow">
+        <ul class="c-guide dates-list">
+          <li><span>Submission deadline</span><span class="d-val">August 29, 2026</span></li>
+          <li><span>Author notification</span><span class="d-val">on or before September 29, 2026</span></li>
+          <li><span>Workshop days</span><span class="d-val">December 11-12, 2026 (Sydney)</span></li>
         </ul>
-        <h5>Responsible-Use Statement</h5>
-        <p>Every submission also includes a short <b>responsible-use statement</b> covering the potential societal impacts of the proposed work and suggested mitigations. It is reviewed with the paper, and a missing one is grounds for desk rejection.</p>
-        <h5>Anonymity</h5>
-        The workshop uses <b>double-blind review</b>. Submissions must be anonymized, with author names, affiliations, and acknowledgments removed and prior work cited in the third person.
-        <br>
-        <br>
-        <h5>Non-Archival Policy</h5>
-        <p><b>The workshop is non-archival.</b> Papers under review elsewhere are welcome, and accepted papers may be published at other venues afterward. Work already published at NeurIPS or other archival ML venues should not be submitted.
-        </p>
-        <h5>Contact</h5>
-        Email <a href="mailto:meta-agents-workshop@googlegroups.com">meta-agents-workshop@googlegroups.com</a>.
-        <!-- TODO(organizers): create the contact group address, or swap in a real one. -->
+        <p class="c-note">All deadlines are 23:59 <a href="https://time.is/Anywhere_on_Earth" target="_blank" rel="noopener">Anywhere on Earth (AoE)</a>.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="speakers" class="section-with-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Speakers &amp; Panelists</h2>
-          <p>Eight invited speakers and panelists planning to attend in person, all confirmed except where marked tentative. Talk topics are illustrative and finalized with each speaker.</p>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
-              <img src="assets/img/speakers/graham_neubig.jpg" alt="Graham Neubig" class="img-fluid">
-              <br><a href="https://www.phontron.com/" style="font-size: 1.2em; color: #00356B;">Graham Neubig</a></br>
-              <p>Carnegie Mellon University</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Speaker</p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Talk:</b> <i>Automating and Evaluating the Agent Harness</i><br>Automating the SWE-agent harness (OpenHands) and recursive agent optimization, with the evaluation needed to trust the result.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
-              <img src="assets/img/speakers/finn.jpg" alt="Chelsea Finn" class="img-fluid">
-              <br><a href="https://ai.stanford.edu/~cbfinn/" style="font-size: 1.2em; color: #00356B;">Chelsea Finn</a></br>
-              <p>Stanford University</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Speaker &amp; Panelist <span style="color: #b26a00;">(Tentative)</span></p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Talk:</b> <i>From Meta-Learning to Agents that Learn to Learn</i><br>How learning-to-learn, from MAML to the Meta-Harness, carries into agents that tune their own scaffolding.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
-              <img src="assets/img/speakers/jenny_zhang.jpg" alt="Jenny Zhang" class="img-fluid">
-              <br><a href="https://www.jennyzhangzt.com/" style="font-size: 1.2em; color: #00356B;">Jenny Zhang</a></br>
-              <p>Recursive Superintelligence &amp; UBC</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Speaker</p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Talk:</b> <i>Self-Improving Agents and Their Failure Modes</i><br>The Darwin G&ouml;del Machine and HyperAgents as open-ended self-improvement, and the failure modes when an agent rewrites its own code.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
-              <img src="assets/img/speakers/robert_lange.jpg" alt="Robert Lange" class="img-fluid">
-              <br><a href="https://roberttlange.com/" style="font-size: 1.2em; color: #00356B;">Robert Lange</a></br>
-              <p>Sakana AI</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Speaker</p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Talk:</b> <i>Evolutionary Methods for Self-Improving Agents</i><br>Evolutionary, nature-inspired methods (The AI Scientist, ShinkaEvolve) for agents that improve other agents.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
-              <img src="assets/img/speakers/bo_li.jpg" alt="Bo Li" class="img-fluid">
-              <br><a href="https://aisecure.github.io/" style="font-size: 1.2em; color: #00356B;">Bo Li</a></br>
-              <p>University of Illinois Urbana-Champaign</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Speaker &amp; Panelist</p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Talk:</b> <i>How Meta-Agents Could Help on Safety Evaluation</i><br>Trustworthy-ML for agents that act on other agents: red-teaming, robustness, and safety benchmarks (DecodingTrust).</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="350" style="text-align: center;">
-              <img src="assets/img/speakers/hancheng_cao.jpg" alt="Hancheng Cao" class="img-fluid">
-              <br><a href="https://hanchengcao.me/" style="font-size: 1.2em; color: #00356B;">Hancheng Cao</a></br>
-              <p>Emory University</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Speaker &amp; Panelist</p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Talk:</b> <i>AI Agents that Manage People: Work, Labor, and Oversight</i><br>How AI agents reshape work, organizational design, and management (When Your Boss Is an AI Bot).</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="400" style="text-align: center;">
-              <img src="assets/img/speakers/yuandong_tian.jpg" alt="Yuandong Tian" class="img-fluid">
-              <br><a href="https://yuandong-tian.com/" style="font-size: 1.2em; color: #00356B;">Yuandong Tian</a></br>
-              <p>Recursive</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Panelist</p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Panelist.</b> Reinforcement learning, planning, and efficient reasoning for self-improving AI; co-founder of Recursive.</p>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-4 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="450" style="text-align: center;">
-              <img src="assets/img/speakers/chen_sun.jpg" alt="Chen Sun" class="img-fluid">
-              <br><a href="https://scholar.google.com/citations?user=Xvl3OLEAAAAJ&hl=en" style="font-size: 1.2em; color: #00356B;">Chen Sun</a></br>
-              <p>Google DeepMind</p>
-              <p style="font-size: 0.78em; color: #00356B; font-weight: 600; margin-top: -6px;">Panelist</p>
-              <p style="font-size: 0.82em; color: #555; text-align: left; margin-top: 8px;"><b>Panelist.</b> World models and open-endedness: the learned environments a meta-agent uses to train, simulate, and evaluate other agents.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="schedule" style="padding-top: 20px;">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Tentative Schedule</h2>
-          <p>All invited talks include a Q&amp;A session. Titles are illustrative; the final schedule is confirmed closer to the workshop.</p>
-        </div>
-        <style>
-          .schedule-table td.time, .schedule-table th:first-child { white-space: nowrap; }
-          .schedule-table tr.break-row td { background-color: #fff3cd80 !important; }
-          .schedule-table tr.poster-row td { background-color: #d1ecf180 !important; }
-        </style>
-        <div class="table-responsive">
-          <table class="schedule-table table align-middle">
+  <section id="schedule">
+    <div class="wrap reveal">
+      <h2 class="stitle">Tentative Schedule</h2>
+      <svg class="divider" viewBox="0 0 170 22" aria-hidden="true"><g fill="none" stroke-linecap="round"><circle cx="85" cy="11" r="7" fill="none" stroke="#b7521e" stroke-width="2.2"/><circle cx="85" cy="11" r="2.6" fill="#b7521e" stroke="none"/><path d="M 20 11 L 70 11 M 100 11 L 150 11" stroke="#2e3a86" stroke-width="2.2" stroke-dasharray="1 8"/><path d="M 20 7 L 20 15 M 150 7 L 150 15" stroke="#2e3a86" stroke-width="2.2"/></g></svg>
+      <div class="narrow" style="max-width: 900px;">
+        <p class="c-p c-center">All invited talks include a Q&amp;A session. Titles are illustrative; the final schedule is confirmed closer to the workshop.</p>
+        <div class="sched-scroll">
+          <table class="sched">
             <thead>
-              <tr>
-                <th>Time&nbsp;(AEDT)</th>
-                <th>Session</th>
-                <th>Speaker</th>
-                <th>Talk&nbsp;Title</th>
-              </tr>
+              <tr><th>Time (AEDT)</th><th>Session</th><th>Speaker &amp; Topic</th></tr>
             </thead>
             <tbody>
-              <tr><td class="time">08:20 &ndash; 08:30</td><td>Opening Remarks &amp; Framing</td><td colspan="2">Organizers</td></tr>
-              <tr><td class="time">08:30 &ndash; 09:00</td><td>Invited Talk 1</td><td>Graham Neubig (CMU)</td><td>Automating and Evaluating the Agent Harness</td></tr>
-              <tr><td class="time">09:00 &ndash; 09:30</td><td>Invited Talk 2</td><td>Chelsea Finn (Stanford) <span style="color: #b26a00;">(tentative)</span></td><td>From Meta-Learning to Agents that Learn to Learn</td></tr>
-              <tr><td class="time">09:30 &ndash; 10:00</td><td>Invited Talk 3</td><td>Robert Lange (Sakana AI)</td><td>Evolutionary Methods for Self-Improving Agents</td></tr>
-              <tr><td class="time">10:00 &ndash; 10:30</td><td>Technical Problems: Oral + Spotlight Talks</td><td colspan="2">Selected authors</td></tr>
-              <tr class="poster-row"><td class="time">10:30 &ndash; 11:30</td><td colspan="3">Poster Session 1 + Demo Track</td></tr>
-              <tr class="break-row"><td class="time">11:30 &ndash; 13:00</td><td colspan="3">Lunch Break</td></tr>
-              <tr class="poster-row"><td class="time">13:00 &ndash; 14:00</td><td colspan="3">Poster Session 2 + Demo Track</td></tr>
-              <tr><td class="time">14:00 &ndash; 14:30</td><td>Invited Talk 4</td><td>Jenny Zhang (Recursive Superintelligence &amp; UBC)</td><td>Self-Improving Agents and Their Failure Modes</td></tr>
-              <tr><td class="time">14:30 &ndash; 15:00</td><td>Invited Talk 5</td><td>Bo Li (UIUC)</td><td>How Meta-Agents Could Help on Safety Evaluation</td></tr>
-              <tr><td class="time">15:00 &ndash; 15:30</td><td>Invited Talk 6</td><td>Hancheng Cao (Emory)</td><td>AI Agents that Manage People: Work, Labor, and Oversight</td></tr>
-              <tr><td class="time">15:30 &ndash; 16:00</td><td>Societal Impacts: Oral + Position Talks</td><td colspan="2">Selected authors</td></tr>
-              <tr><td class="time">16:00 &ndash; 16:45</td><td>Societal Impact Panel &amp; Debate</td><td colspan="2"><b>Oversight of Meta-Agents</b> (Cao, Chen Sun, Yuandong Tian, Finn <span style="color: #b26a00;">(tentative)</span>, Bo Li)<br><i>As meta-agents build and manage other agents, what role remains for humans, and who stays accountable when something goes wrong?</i></td></tr>
-              <tr><td class="time">16:45 &ndash; 17:00</td><td>Awards &amp; Closing Remarks</td><td colspan="2">Organizers</td></tr>
+              <tr><td class="time">08:20 - 08:30</td><td>Opening Remarks &amp; Framing</td><td>Organizers</td></tr>
+              <tr><td class="time">08:30 - 09:00</td><td>Invited Talk 1</td><td>Graham Neubig (CMU): Automating and Evaluating the Agent Harness</td></tr>
+              <tr><td class="time">09:00 - 09:30</td><td>Invited Talk 2</td><td>Chelsea Finn (Stanford, tentative): From Meta-Learning to Agents that Learn to Learn</td></tr>
+              <tr><td class="time">09:30 - 10:00</td><td>Invited Talk 3</td><td>Robert Lange (Sakana AI): Evolutionary Methods for Self-Improving Agents</td></tr>
+              <tr><td class="time">10:00 - 10:30</td><td>Technical Problems: Oral + Spotlight Talks</td><td>Selected authors</td></tr>
+              <tr class="poster-row"><td class="time">10:30 - 11:30</td><td colspan="2">Poster Session 1 + Demo Track</td></tr>
+              <tr class="break-row"><td class="time">11:30 - 13:00</td><td colspan="2">Lunch Break</td></tr>
+              <tr class="poster-row"><td class="time">13:00 - 14:00</td><td colspan="2">Poster Session 2 + Demo Track</td></tr>
+              <tr><td class="time">14:00 - 14:30</td><td>Invited Talk 4</td><td>Jenny Zhang (Recursive Superintelligence &amp; UBC): Self-Improving Agents and Their Failure Modes</td></tr>
+              <tr><td class="time">14:30 - 15:00</td><td>Invited Talk 5</td><td>Bo Li (UIUC): How Meta-Agents Could Help on Safety Evaluation</td></tr>
+              <tr><td class="time">15:00 - 15:30</td><td>Invited Talk 6</td><td>Hancheng Cao (Emory): AI Agents that Manage People: Work, Labor, and Oversight</td></tr>
+              <tr><td class="time">15:30 - 16:00</td><td>Societal Impacts: Oral + Position Talks</td><td>Selected authors</td></tr>
+              <tr><td class="time">16:00 - 16:45</td><td>Societal Impact Panel &amp; Debate</td><td><strong>Oversight of Meta-Agents</strong> (Cao, Chen Sun, Yuandong Tian, Finn (tentative), Bo Li). As meta-agents build and manage other agents, what role remains for humans, and who stays accountable when something goes wrong?</td></tr>
+              <tr><td class="time">16:45 - 17:00</td><td>Awards &amp; Closing Remarks</td><td>Organizers</td></tr>
             </tbody>
           </table>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="organizers">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Organizers</h2>
-          <p>This workshop is organized and advised by</p>
+  <section id="organizers">
+    <div class="wrap reveal">
+      <h2 class="stitle">Organizers</h2>
+      <svg class="divider" viewBox="0 0 170 22" aria-hidden="true"><g fill="none" stroke-linecap="round"><circle cx="85" cy="11" r="7" fill="none" stroke="#b7521e" stroke-width="2.2"/><circle cx="85" cy="11" r="2.6" fill="#b7521e" stroke="none"/><path d="M 20 11 L 70 11 M 100 11 L 150 11" stroke="#2e3a86" stroke-width="2.2" stroke-dasharray="1 8"/><path d="M 20 7 L 20 15 M 150 7 L 150 15" stroke="#2e3a86" stroke-width="2.2"/></g></svg>
+      <div class="narrow">
+        <p class="c-p c-center">This workshop is organized and advised by</p>
+        <div class="people">
+          <div class="person"><img class="avatar" src="assets/img/organizers/simon_yu.jpeg" alt="Simon Yu" /><div class="p-name"><a href="https://simonucl.github.io/" target="_blank" rel="noopener">Simon Yu</a></div><div class="p-affil">Northeastern University</div></div>
+          <div class="person"><img class="avatar" src="assets/img/organizers/dilara_soylu.jpg" alt="Dilara Soylu" /><div class="p-name"><a href="https://dilarasoylu.github.io/" target="_blank" rel="noopener">Dilara Soylu</a></div><div class="p-affil">Stanford University</div></div>
+          <div class="person"><img class="avatar" src="assets/img/organizers/derek_chong.png" alt="Derek Chong" /><div class="p-name"><a href="https://nlp.stanford.edu/~derekch/" target="_blank" rel="noopener">Derek Chong</a></div><div class="p-affil">Stanford University</div></div>
+          <div class="person"><img class="avatar" src="assets/img/organizers/ananjan_nandi.jpg" alt="Ananjan Nandi" /><div class="p-name"><a href="https://ananjan-nandi-9.github.io/" target="_blank" rel="noopener">Ananjan Nandi</a></div><div class="p-affil">Stanford University</div></div>
+          <div class="person"><img class="avatar" src="assets/img/organizers/apurva_gandhi.jpg" alt="Apurva Gandhi" /><div class="p-name"><a href="https://apga.github.io/" target="_blank" rel="noopener">Apurva Gandhi</a></div><div class="p-affil">Carnegie Mellon University</div></div>
+          <div class="person"><img class="avatar" src="assets/img/organizers/jiuding_sun.png" alt="Jiuding Sun" /><div class="p-name"><a href="https://jiudingsun01.github.io/" target="_blank" rel="noopener">Jiuding Sun</a></div><div class="p-affil">Stanford University</div></div>
+          <div class="person"><img class="avatar" src="assets/img/organizers/zichen_liu.jpg" alt="Zichen Liu" /><div class="p-name"><a href="https://lkevinzc.github.io/" target="_blank" rel="noopener">Zichen Liu</a></div><div class="p-affil">Google DeepMind</div></div>
+          <div class="person"><img class="avatar" src="assets/img/advisors/manning.jpg" alt="Christopher D. Manning" /><div class="p-name"><a href="https://nlp.stanford.edu/~manning/" target="_blank" rel="noopener">Christopher D. Manning</a></div><div class="p-affil">Stanford University</div></div>
+          <div class="person"><img class="avatar" src="assets/img/advisors/weiyan_shi.jpg" alt="Weiyan Shi" /><div class="p-name"><a href="https://wyshi.github.io/" target="_blank" rel="noopener">Weiyan Shi</a></div><div class="p-affil">Northeastern University</div></div>
         </div>
-        <div class="row">
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
-              <img src="assets/img/organizers/simon_yu.jpeg" alt="Simon Yu" class="img-fluid">
-              <br><a href="https://simonucl.github.io/" style="font-size: 1.2em; color: #00356B;">Simon Yu</a></br>
-              <p>Northeastern University</p>
-            </div>
-          </div>
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
-              <img src="assets/img/organizers/dilara_soylu.jpg" alt="Dilara Soylu" class="img-fluid">
-              <br><a href="https://dilarasoylu.github.io/" style="font-size: 1.2em; color: #00356B;">Dilara Soylu</a></br>
-              <p>Stanford University</p>
-            </div>
-          </div>
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
-              <img src="assets/img/organizers/derek_chong.png" alt="Derek Chong" class="img-fluid">
-              <br><a href="https://nlp.stanford.edu/~derekch/" style="font-size: 1.2em; color: #00356B;">Derek Chong</a></br>
-              <p>Stanford University</p>
-            </div>
-          </div>
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
-              <img src="assets/img/organizers/ananjan_nandi.jpg" alt="Ananjan Nandi" class="img-fluid">
-              <br><a href="https://ananjan-nandi-9.github.io/" style="font-size: 1.2em; color: #00356B;">Ananjan Nandi</a></br>
-              <p>Stanford University</p>
-            </div>
-          </div>
+        <div class="sponsor-block">
+          <h3>Sponsored by</h3>
+          <a href="https://ai.meta.com/" target="_blank" rel="noopener"><img src="assets/img/sponsors/meta_ai.png" alt="Meta AI" /></a>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="100" style="text-align: center;">
-              <img src="assets/img/organizers/apurva_gandhi.jpg" alt="Apurva Gandhi" class="img-fluid">
-              <br><a href="https://apga.github.io/" style="font-size: 1.2em; color: #00356B;">Apurva Gandhi</a></br>
-              <p>Carnegie Mellon University</p>
-            </div>
-          </div>
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="150" style="text-align: center;">
-              <img src="assets/img/organizers/jiuding_sun.png" alt="Jiuding Sun" class="img-fluid">
-              <br><a href="https://jiudingsun01.github.io/" style="font-size: 1.2em; color: #00356B;">Jiuding Sun</a></br>
-              <p>Stanford University</p>
-            </div>
-          </div>
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
-              <img src="assets/img/organizers/zichen_liu.jpg" alt="Zichen Liu" class="img-fluid">
-              <br><a href="https://lkevinzc.github.io/" style="font-size: 1.2em; color: #00356B;">Zichen Liu</a></br>
-              <p>Google DeepMind</p>
-            </div>
-          </div>
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="250" style="text-align: center;">
-              <img src="assets/img/advisors/manning.jpg" alt="Christopher D. Manning" class="img-fluid">
-              <br><a href="https://nlp.stanford.edu/~manning/" style="font-size: 1.2em; color: #00356B;">Christopher D. Manning</a></br>
-              <p>Stanford University</p>
-            </div>
-          </div>
-          <div class="col-lg col-md-4 col-sm-6 col-6">
-            <div class="speaker" data-aos="fade-up" data-aos-delay="300" style="text-align: center;">
-              <img src="assets/img/advisors/weiyan_shi.jpg" alt="Weiyan Shi" class="img-fluid">
-              <br><a href="https://wyshi.github.io/" style="font-size: 1.2em; color: #00356B;">Weiyan Shi</a></br>
-              <p>Northeastern University</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="sponsors">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Sponsors</h2>
-          <p>We gratefully acknowledge the support of our sponsor.</p>
-        </div>
-        <div class="row justify-content-center align-items-center">
-          <div class="col-auto text-center">
-            <a href="https://ai.meta.com/" target="_blank" rel="noopener noreferrer">
-              <img src="assets/img/sponsors/meta_ai.png" alt="Meta AI" style="height: 120px; width: auto;">
-            </a>
-            <p style="margin-top: 12px; font-weight: 600; color: #00356B;">Meta AI</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <br>
-    <br>
-
-  </main>
-
-  <footer id="footer">
-    <div class="container">
-      <div class="social-links" style="text-align: center; margin-bottom: 15px;">
-        <a href="https://x.com/MetaAgentWkshop" target="_blank" rel="noopener noreferrer" title="Follow @MetaAgentWkshop on X" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #222636; color: #eee; text-decoration: none;"><i class="bi bi-twitter-x"></i></a>
-      </div>
-      <div class="copyright"></div>
-      <div class="credits">
-        Template adopted from <a href="https://workshop-multi-turn-interaction.github.io/" target="_blank" rel="noopener noreferrer">MTI-LLM @ NeurIPS 2025</a>.
       </div>
     </div>
+  </section>
+
+  <section class="finale-sec" id="finale-sec">
+    <div class="finale-pin">
+    <div class="finale-wrap">
+      <svg id="finale" class="finale-svg" viewBox="0 0 1200 430" aria-label="Line drawing of Sydney at dusk: the city skyline with Sydney Tower, a ferris wheel by the harbour, a tugboat, and a large robot patting a small robot, with a delivery drone flying away">
+        <!-- moon and stars -->
+        <path d="M 1096 52 A 34 34 0 1 0 1126 106 A 27 27 0 1 1 1096 52" />
+        <path d="M 950 70 Q 952 78 960 80 Q 952 82 950 90 Q 948 82 940 80 Q 948 78 950 70" />
+        <path d="M 1020 130 Q 1021 136 1027 137 Q 1021 138 1020 144 Q 1019 138 1013 137 Q 1019 136 1020 130" />
+        <path d="M 870 46 Q 871 52 877 53 Q 871 54 870 60 Q 869 54 863 53 Q 869 52 870 46" />
+        <path d="M 1160 140 Q 1161 146 1167 147 Q 1161 148 1160 154 Q 1159 148 1153 147 Q 1159 146 1160 140" />
+        <!-- clouds -->
+        <path d="M 130 96 Q 138 78 160 80 Q 170 64 194 68 Q 216 62 224 78 Q 242 78 236 94 Q 184 100 130 96" />
+        <path d="M 430 58 Q 438 44 454 47 Q 462 34 480 39 Q 496 36 500 50 Q 510 52 505 62 Q 468 66 430 58" />
+        <!-- city skyline, left to right -->
+        <path d="M 40 372 L 40 302 L 92 302 L 92 372" />
+        <path d="M 52 316 L 80 316 M 52 330 L 80 330 M 52 344 L 80 344" />
+        <path d="M 104 372 L 104 256 L 152 256 L 152 372 M 128 256 L 128 240" />
+        <path d="M 114 272 L 142 272 M 114 288 L 142 288 M 114 304 L 142 304 M 114 320 L 142 320" />
+        <path d="M 164 372 L 164 284 L 188 284 L 188 252 L 222 252 L 222 372" />
+        <path d="M 196 266 L 214 266 M 196 280 L 214 280 M 172 298 L 214 298 M 172 314 L 214 314" />
+        <!-- Sydney Tower: shaft, turret, spire -->
+        <path d="M 272 372 L 276 208 M 290 372 L 286 208" />
+        <path d="M 276 208 L 258 198 L 256 174 L 268 156 L 294 156 L 306 174 L 304 198 L 286 208" />
+        <path d="M 258 190 L 304 190 M 258 174 L 304 174" />
+        <path d="M 281 156 L 281 98 M 281 98 L 291 103 L 281 108" />
+        <path d="M 262 372 L 300 372 M 268 356 L 294 356" />
+        <!-- more towers behind -->
+        <path d="M 330 372 L 330 268 L 378 268 L 378 372" />
+        <path d="M 340 284 L 368 284 M 340 300 L 368 300 M 340 316 L 368 316" />
+        <path d="M 390 372 L 390 240 L 400 228 L 442 228 L 452 240 L 452 372" />
+        <path d="M 402 246 L 440 246 M 402 262 L 440 262 M 402 278 L 440 278 M 402 294 L 440 294" />
+        <path d="M 464 372 L 464 306 L 520 306 L 520 372 M 486 306 L 486 292 L 498 292 L 498 306" />
+        <!-- ferris wheel by the harbour -->
+        <path d="M 640 229 a 56 56 0 1 0 0.1 0" />
+        <path d="M 640 279 a 6 6 0 1 0 0.1 0" />
+        <path d="M 640 279 L 640 229 M 640 285 L 688 257 M 640 287 L 688 313 M 640 291 L 640 341 M 640 287 L 592 313 M 640 285 L 592 257" />
+        <path d="M 632 221 L 648 221 M 693 250 L 700 264 M 693 320 L 700 306 M 632 349 L 648 349 M 580 250 L 587 264 M 580 320 L 587 306" />
+        <path d="M 640 291 L 614 372 M 640 291 L 666 372 M 606 372 L 674 372" />
+        <!-- tugboat on the harbour -->
+        <path d="M 800 370 L 808 354 L 902 354 L 912 370 L 800 370" />
+        <path d="M 830 354 L 830 338 L 874 338 L 874 354" />
+        <path d="M 838 346 L 846 346 M 854 346 L 862 346" />
+        <path d="M 858 338 L 858 326 L 868 326 L 868 338" />
+        <path d="M 866 318 a 4 4 0 1 0 0.1 0 M 874 306 a 5 5 0 1 0 0.1 0" />
+        <path d="M 766 378 L 796 378 M 916 378 L 948 378" />
+        <!-- the big robot arrives -->
+        <path d="M 995 250 L 995 226 L 1031 226 L 1031 250 L 995 250" />
+        <path d="M 1005 236 a 2.5 2.5 0 1 0 0.1 0 M 1021 236 a 2.5 2.5 0 1 0 0.1 0 M 1008 244 L 1018 244" />
+        <path d="M 1013 226 L 1013 216 M 1013 212 a 4 4 0 1 0 0.1 0" />
+        <path d="M 998 250 L 992 320 L 1034 320 L 1028 250" />
+        <path d="M 1006 268 L 1020 268 L 1020 282 L 1006 282 L 1006 268 M 1006 275 L 1020 275" />
+        <path d="M 1002 320 L 1002 366 L 990 366 M 1024 320 L 1024 366 L 1036 366" />
+        <path d="M 996 256 C 982 262 974 276 972 290 M 972 294 a 3.5 3.5 0 1 0 0.1 0" />
+        <!-- and pats the small robot -->
+        <path d="M 1030 256 C 1046 262 1054 272 1057 284 M 1057 288 a 3.5 3.5 0 1 0 0.1 0" />
+        <path d="M 1052 312 L 1052 296 L 1076 296 L 1076 312 L 1052 312" />
+        <path d="M 1059 303 a 2 2 0 1 0 0.1 0 M 1069 303 a 2 2 0 1 0 0.1 0" />
+        <path d="M 1055 312 L 1053 344 L 1075 344 L 1073 312" />
+        <path d="M 1059 344 L 1059 366 L 1051 366 M 1069 344 L 1069 366 L 1077 366" />
+        <path d="M 1055 318 C 1046 322 1042 330 1041 338 M 1073 318 C 1082 322 1086 330 1087 338" />
+        <!-- ground and water -->
+        <path d="M 20 372 L 1180 372" />
+        <path d="M 560 396 L 700 396 M 760 402 L 880 402 M 920 392 L 1030 392 M 1070 400 L 1160 400" />
+        <path d="M 600 386 L 660 386 M 820 388 L 900 388 M 1060 386 L 1120 386" />
+        <!-- the delivery drone (flies off at the end) -->
+        <g id="drone">
+          <path d="M 1042 176 L 1074 176 L 1068 186 L 1048 186 L 1042 176" />
+          <path d="M 1048 176 L 1040 166 M 1068 176 L 1076 166 M 1032 166 L 1048 166 M 1068 166 L 1084 166" />
+          <path d="M 1058 186 L 1058 194 M 1051 194 L 1065 194 L 1065 203 L 1051 203 L 1051 194" />
+        </g>
+      </svg>
+      <p class="finale-cap">Every agent brings a manager. See you in Sydney. 🤖</p>
+    </div>
+    </div>
+  </section>
+
+  <footer class="foot" id="contact">
+    <div class="t">Managing Agents that Manage Agents</div>
+    <div class="s">NeurIPS 2026 Workshop · Sydney, Australia · December 11-12, 2026</div>
+    <p class="reach">Questions about the workshop, submissions, or sponsorship?<br />
+      <a href="mailto:meta-agents-workshop@googlegroups.com">meta-agents-workshop@googlegroups.com</a></p>
+    <p class="soc"><a href="https://x.com/MetaAgentWkshop" target="_blank" rel="noopener">@MetaAgentWkshop on X</a> · <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/Meta-Agents" target="_blank" rel="noopener">OpenReview</a></p>
   </footer>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script>
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  <script src="assets/js/main.js"></script>
+      // Fade-up section reveals
+      var revealed = document.querySelectorAll('.reveal');
+      if (!reduce && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        revealed.forEach(function (el) { io.observe(el); });
+      } else {
+        revealed.forEach(function (el) { el.classList.add('on'); });
+      }
 
+      // Scroll-driven line drawing of the Sydney finale
+      var svg = document.getElementById('finale');
+      var drone = document.getElementById('drone');
+      var paths = Array.prototype.slice.call(svg.querySelectorAll('path'));
+      var lens = paths.map(function (p) { return p.getTotalLength(); });
+      var total = lens.reduce(function (a, b) { return a + b; }, 0);
+
+      if (reduce) return; // leave the drawing fully visible
+
+      paths.forEach(function (p, i) {
+        p.style.strokeDasharray = lens[i] + ' ' + lens[i];
+        p.style.strokeDashoffset = lens[i];
+      });
+
+      var ticking = false;
+      function draw() {
+        ticking = false;
+        var sec = document.getElementById('finale-sec');
+        var sr = sec.getBoundingClientRect();
+        var vh = window.innerHeight;
+        // drawing begins the moment the section enters the viewport, keeps
+        // going while the stage is pinned, and the drone takes the last stretch
+        var stage = document.querySelector('.finale-pin');
+        var pinSpan = sr.height - stage.offsetHeight;
+        var y = vh - sr.top;
+        // first strokes appear once the canvas reaches mid-viewport,
+        // then the drawing runs through 80% of the pinned stretch
+        var startY = vh * 0.5;
+        var drawSpan = vh * 0.28 + pinSpan * 0.8;
+        var progress = Math.max(0, Math.min(1, (y - startY) / drawSpan));
+        var drawn = progress * total;
+        for (var i = 0; i < paths.length; i++) {
+          var take = Math.max(0, Math.min(lens[i], drawn));
+          paths[i].style.strokeDashoffset = lens[i] - take;
+          drawn -= take;
+        }
+        var fly = Math.max(0, Math.min(1, (y - startY - drawSpan * 0.96) / (pinSpan * 0.2)));
+        var r = svg.getBoundingClientRect();
+        var scale = r.width / 1200;
+        var toEdge = (window.innerWidth - r.left) / scale - 1032 + 30; // svg-units from the drone to past the window edge
+        drone.setAttribute('transform', 'translate(' + (fly * toEdge) + ' ' + (-fly * 60) + ')');
+      }
+      function onScroll() {
+        if (!ticking) { ticking = true; window.requestAnimationFrame(draw); }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      draw();
+    })();
+  </script>
 </body>
-
 </html>
