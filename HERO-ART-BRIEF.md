@@ -12,9 +12,11 @@ the page's first dark section.
 2. **No text anywhere in the image.** No letters, signage, numbers, or
    watermarks. All type is overlaid in HTML.
 3. **No decorative frame or border.**
-4. **Subjects grouped in the right ~30%** of the frame.
-5. **Left ~55% calm and empty** (open sky/water), quiet enough for dark
-   display text at large sizes.
+4. **Subjects grouped in the lower third**, centered or slightly right,
+   sitting just above the dark convergence zone. (The page centers its
+   hero text near the top, so the composition is calm-top, not calm-left.)
+5. **Top ~55% calm and empty** (open sky), quiet enough for dark display
+   text at large sizes, centered.
 6. **Bottom quarter darkens to converge on one flat hex color across the
    entire bottom edge.** The next page section is set to that exact color
    (currently `#10182e`), so the image hands off invisibly.
@@ -22,28 +24,29 @@ the page's first dark section.
 ## Scene direction (adapt freely within the constraints)
 
 Dusk over Sydney Harbour seen from the water, painterly and warm, no
-photorealism. Left: open twilight sky and calm water. Right: a friendly
-oversized robot kneeling at the shoreline, adjusting or guiding a small
-group of smaller robots (agents managing agents), city skyline with Sydney
-Tower behind them. Warm amber highlights against deep indigo dusk; the
-palette should sit comfortably with indigo `#2e3a86`, ember `#b7521e`,
-gold `#e3a75c`, and night `#10182e`.
+photorealism. Top half: open twilight sky, calm and empty. Lower third: a
+friendly oversized robot kneeling at the shoreline, adjusting or guiding a
+small group of smaller robots (agents managing agents), city skyline with
+Sydney Tower behind them, centered or drifting slightly right. Warm amber
+highlights against deep indigo dusk; the palette should sit comfortably
+with indigo `#2e3a86`, ember `#b7521e`, gold `#e3a75c`, and night
+`#10182e`.
 
 ## Prompt to give the image model
 
 > A wide painterly digital illustration at 1312 x 816 (landscape, 16:10),
-> dusk over Sydney Harbour viewed from the water. The left 55% of the frame
+> dusk over Sydney Harbour viewed from the water. The top 55% of the frame
 > is calm and empty: soft gradient twilight sky in muted periwinkle and
-> apricot, still open water, no objects, no clouds with hard edges. In the
-> right 30%: a friendly rounded giant robot kneels at the shoreline gently
-> guiding three small robots, silhouetted city skyline with Sydney Tower
-> behind them, warm amber rim lighting, deep indigo shadows. The bottom
-> quarter of the image darkens smoothly until the entire bottom edge is one
-> flat uniform color, exactly #10182e, with no visible detail at the bottom
-> edge. Absolutely no text, letters, numbers, signage, logos, watermarks,
-> or decorative frame anywhere in the image. Muted warm palette: indigo,
-> ember orange, soft gold. Storybook concept-art style, clean shapes, calm
-> mood.
+> apricot, no objects, no clouds with hard edges. Along the lower third,
+> centered and drifting slightly right: a friendly rounded giant robot
+> kneels at the shoreline gently guiding three small robots, silhouetted
+> city skyline with Sydney Tower behind them, warm amber rim lighting,
+> deep indigo shadows. The bottom quarter of the image darkens smoothly
+> until the entire bottom edge is one flat uniform color, exactly #10182e,
+> with no visible detail at the bottom edge. Absolutely no text, letters,
+> numbers, signage, logos, watermarks, or decorative frame anywhere in the
+> image. Muted warm palette: indigo, ember orange, soft gold. Storybook
+> concept-art style, clean shapes, calm mood.
 
 Expect 3 to 5 generations. Reject results that fix one requirement but
 drift on another; re-state every constraint on each iteration.
