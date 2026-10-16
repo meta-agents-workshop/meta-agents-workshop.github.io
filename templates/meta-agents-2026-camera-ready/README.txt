@@ -5,7 +5,7 @@ Camera-ready deadline: November 20, 2026, Anywhere on Earth (AoE).
 Workshop: December 11, 2026, Sydney, Australia.
 
 All camera-ready papers must use this NeurIPS 2026 template.
-Full papers: at most 9 pages of main text, including figures and tables.
+Full papers: at most 10 pages of main text, including figures and tables.
 Short papers: at most 4 pages of main text, including figures and tables.
 References and appendices do not count toward the page limits.
 Keep the main text self-contained and include a responsible-use statement.
